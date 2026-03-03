@@ -190,21 +190,21 @@ export default function AGB() {
                   </div>
                 </section>
 
-                {/* § 8 Schlussbestimmungen */}
+                {/* § 8 Referenznennung */}
                 <section>
-                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 8 Schlussbestimmungen</h2>
+                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 8 Referenznennung</h2>
+                  <div className="space-y-4">
+                    <p>Der Auftragnehmer ist berechtigt, den Auftraggeber auf der eigenen Website oder in anderen Werbemedien (z. B. Social Media, Portfolio-Präsentationen) als Referenzkunden namentlich zu nennen und in diesem Zusammenhang das Logo des Auftraggebers sowie Screenshots der erstellten Website zu vervielfältigen und zu veröffentlichen. Der Auftraggeber kann diese Einwilligung jederzeit für die Zukunft schriftlich oder per E-Mail widerrufen, sofern ein berechtigtes Interesse besteht.</p>
+                  </div>
+                </section>
+
+                {/* § 9 Schlussbestimmungen */}
+                <section>
+                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 9 Schlussbestimmungen</h2>
                   <div className="space-y-4">
                     <p>Es gilt das Recht der Bundesrepublik Deutschland.</p>
                     <p>Gerichtsstand für alle Streitigkeiten aus diesem Vertrag ist der Sitz des Auftragnehmers (Berlin), sofern der Auftraggeber Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist.</p>
                     <p>Sollten einzelne Bestimmungen dieser AGB unwirksam sein, bleibt der Vertrag im Übrigen wirksam.</p>
-                  </div>
-                </section>
-
-                {/* § 9 Referenznennung */}
-                <section>
-                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 9 Referenznennung</h2>
-                  <div className="space-y-4">
-                    <p>Der Auftragnehmer ist berechtigt, den Auftraggeber auf der eigenen Website oder in anderen Werbemedien (z. B. Social Media, Portfolio-Präsentationen) als Referenzkunden namentlich zu nennen und in diesem Zusammenhang das Logo des Auftraggebers sowie Screenshots der erstellten Website zu vervielfältigen und zu veröffentlichen. Der Auftraggeber kann diese Einwilligung jederzeit für die Zukunft schriftlich oder per E-Mail widerrufen, sofern ein berechtigtes Interesse besteht.</p>
                   </div>
                 </section>
 
