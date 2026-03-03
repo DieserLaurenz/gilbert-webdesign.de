@@ -202,42 +202,42 @@ export default function App() {
                 delay={100}
                 icon={<Zap size={28} className="text-blue-900" />}
                 title="High-End-Performance"
-                description="Ladezeiten entscheiden über den Erfolg Ihrer Website. Während viele Baukastensysteme systembedingt oft ungenutzten Code („Overhead“) mitladen, sorgt die moderne Astro-Architektur bei mir für maximale Effizienz. Das Ergebnis: Blitzschnelle Ladezeiten ohne Ballast, eine geringere Absprungrate und ein starker Hebel für Ihre Google-Platzierung."
+                description="Baukästen laden oft unnötigen Code, der Ihre Webseite verlangsamt. Ich nutze die moderne Astro-Architektur für exzellente Effizienz: Blitzschnelle Ladezeiten ohne Ballast senken die Absprungrate und schaffen das ideale Fundament für ein starkes Google Ranking."
               />
               {/* 2. Modulare Maßarbeit */}
               <FeatureCard 
                 delay={200}
                 icon={<Code2 size={28} className="text-blue-900" />}
                 title="Modulare Maßarbeit"
-                description="Statt starre Baukasten-Templates zu nutzen, programmiere ich Ihre Seite individuell mit React. Sie erhalten ein maßgeschneidertes Premium-Design mit nahezu keinen technischen Grenzen, das ich exakt auf Ihre Visionen und Praxisprozesse zuschneide."
+                description="Statt an starre Templates gebunden zu sein programmiere ich Ihre Seite individuell mit dem React-Framework. Sie erhalten ein einzigartiges und professionelles Website-Design mit größtmöglicher technischer Flexibilität, das sich exakt an Ihre Praxisprozesse anpasst."
               />
               {/* 3. Unabhängigkeit */}
               <FeatureCard 
                 delay={300}
                 icon={<ShieldCheck size={28} className="text-blue-900" />}
                 title="Volle Unabhängigkeit"
-                description="Ich biete Ihnen volle Unabhängigkeit: Keine Miete, kein Vendor-Lock-in. Ich räume Ihnen die räumlich, zeitlich und inhaltlich unbeschränkten Nutzungsrechte ein. Sie behalten die volle Kontrolle und können Ihre Website völlig flexibel hosten, skalieren und anpassen."
+                description="Keine monatliche Miete, kein Vendor-Lock-in. Ich räume Ihnen zeitlich und räumlich unbegrenzte Nutzungsrechte am Code ein. So behalten Sie dauerhaft die volle Kontrolle über Hosting, Skalierung und künftige Anpassungen, ohne an Abo-Modelle gebunden zu sein."
               />
               {/* 4. SEO Optimierung */}
               <FeatureCard 
                 delay={400}
                 icon={<Search size={28} className="text-blue-900" />}
-                title="Gezielte technische SEO-Optimierung"
-                description="Während Baukasten-Systeme bei der Suchmaschinenoptimierung oft an technische Grenzen stoßen, ermöglicht individueller Code die präzise Steuerung aller entscheidenden Signale und strukturierten Daten. So schaffe ich ein exzellentes technisches Fundament nach aktuellen Standards, um die Sichtbarkeit Ihrer Praxis in der regionalen Suche gezielt zu stärken."
+                title="Gezielte SEO-Optimierung"
+                description="Baukästensysteme stoßen bei der Suchmaschinenoptimierung oft an Grenzen. Meine Strategie erlaubt die hochpräzise Steuerung relevanter technischer On-Page-Faktoren und schafft so ein exzellentes Fundament für Ihre regionale Sichtbarkeit bei Google."
               />
               {/* 5. Nahtlose Integration */}
               <FeatureCard 
                 delay={500}
                 icon={<Calendar size={28} className="text-blue-900" />}
-                title="Nahtlose Integrationen"
-                description="Ob Doctolib, Jameda oder Treatwell – ich binde Ihre bestehenden Systeme gezielt ein. Da ich auf maßgeschneiderten Code setze, bleibt Ihre Website nachhaltig flexibel erweiterbar und wächst mit Ihren Anforderungen mit."
+                title="Nahtlose Integration"
+                description="Ob Buchungswidgets von Doctolib, Jameda oder Treatwell – ich binde Ihre bestehenden Systeme nahtlos ein. Dank maßgeschneidertem Code bleibt Ihre Website dauerhaft flexibel erweiterbar und wächst mit nahezu grenzenlosem technischem Spielraum an Ihren neuen Anforderungen."
               />
               {/* 6. Konsequent Mobile-First */}
               <FeatureCard 
                 delay={600}
                 icon={<Smartphone size={28} className="text-blue-900" />}
                 title="Konsequent Mobile-First"
-                description="Die meisten Kunden suchen heute mobil. Ich entwickle konsequent nach dem Mobile-First-Prinzip: Ihre Seite funktioniert auf dem Smartphone optimal und passt sich nahtlos an große Bildschirme an – für einen professionellen Eindruck auf jedem Gerät."
+                description="Ihre Patienten suchen heute überwiegend mobil. Ich entwickle konsequent primär für Smartphones: Ihre Website wird für mobile Endgeräte optimiert und passt sich flexibel und flüssig allen Bildschirmgrößen an. So navigieren Ihre Patienten intuitiv und können auch von unterwegs mühelos Termine buchen."
               />
             </div>
           </div>
@@ -360,6 +360,7 @@ export default function App() {
             </Reveal>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* Basis-Paket */}
               <Reveal delay={100} direction="up" className="h-full">
                 <div className="bg-slate-50 p-6 md:p-8 border border-slate-200 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col relative">
                   <div className="flex-grow flex flex-col relative z-10">
@@ -391,6 +392,7 @@ export default function App() {
                 </div>
               </Reveal>
 
+              {/* Premium-Paket */}
               <Reveal delay={200} direction="up" className="h-full">
                 <div className="bg-[#0f172a] p-6 md:p-8 border border-slate-800 rounded-sm shadow-lg h-full flex flex-col relative overflow-hidden">
                   <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 uppercase tracking-wider z-20">
@@ -445,7 +447,7 @@ export default function App() {
               />
               <AccordionItem 
                 question="Ist die Website rechtssicher und DSGVO-konform?"
-                answer="Die technische Integration von Impressum, Datenschutzerklärung und rechtssicheren Elementen gehört bei mir zum absoluten Standard. Ich bereite die technische Infrastruktur so vor, dass die Vorgaben der DSGVO erfüllt werden können (Hinweis: Dies ersetzt keine juristische Einzelfallprüfung)."
+                answer="Ich bereite Ihre Website technisch so vor, dass sie die aktuellen Anforderungen der DSGVO erfüllt. Dazu gehört die technische Integration von Impressum, Datenschutzerklärung und eines Consent-Tools (Cookie-Banner). Bitte beachten Sie: Als Webdesigner darf ich keine Rechtsberatung durchführen. Die finale juristische Prüfung der Inhalte obliegt Ihnen als Seitenbetreiber."
                 delay={200}
               />
               <AccordionItem 
@@ -455,7 +457,7 @@ export default function App() {
               />
               <AccordionItem 
                 question="Kümmern Sie sich auch um Wartung und Updates?"
-                answer="Ja. Da ich auf moderne Webarchitekturen setze, sind meine Seiten von Grund auf sicherer und wartungsärmer als klassische CMS-Systeme. Dennoch biete ich Ihnen auf Wunsch transparente Pflegepakete an, damit Sie sich vollständig auf Ihre Arbeit konzentrieren können."
+                answer="Ja. Da ich auf moderne Webarchitekturen setze, sind die von mir erstellten Seiten von Grund auf sicherer und deutlich wartungsärmer als klassische CMS-Systeme (wie z.B. WordPress). Dennoch biete ich Ihnen auf Wunsch transparente Pflegepakete an, damit Sie sich vollständig auf Ihre Arbeit konzentrieren können."
                 delay={400}
               />
             </div>
@@ -508,11 +510,16 @@ export default function App() {
               <Code2 size={16} />
               <span>Handcrafted by Laurenz Gilbert</span>
             </div>
-            <div className="flex gap-6">
-              <a href="/impressum" className="hover:text-white transition-colors">Impressum</a>
-              <a href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</a>
-              <a href="/agb" className="hover:text-white transition-colors">AGB</a>
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="flex gap-6">
+                <a href="/impressum" className="hover:text-white transition-colors">Impressum</a>
+                <a href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</a>
+                <a href="/agb" className="hover:text-white transition-colors">AGB</a>
+              </div>
             </div>
+          </div>
+          <div className="mt-8 pt-6 border-t border-slate-800 text-xs text-slate-500 text-center md:text-left">
+            Die Marken Doctolib, Jameda und Treatwell sind Eigentum ihrer jeweiligen Inhaber. Die Nennung dient lediglich der Beschreibung der technischen Integrationsmöglichkeiten.
           </div>
         </div>
       </footer>
