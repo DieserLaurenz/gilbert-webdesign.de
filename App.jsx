@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  Smartphone, 
-  Zap, 
-  CheckCircle, 
-  Calendar, 
-  ShieldCheck, 
-  MapPin, 
-  ChevronDown, 
-  Menu, 
+import {
+  Smartphone,
+  Zap,
+  CheckCircle,
+  Calendar,
+  ShieldCheck,
+  MapPin,
+  ChevronDown,
+  Menu,
   X,
   Code2,
   ArrowRight,
@@ -15,15 +15,14 @@ import {
   BarChart3,
   Timer,
   Mail,
-  Search
+  Search,
+  GraduationCap,
+  Briefcase,
+  Cpu
 } from 'lucide-react';
 
 // --- CUSTOM HOOKS & COMPONENTS FOR ANIMATION ---
 
-/**
- * Reveal-Komponente für Scroll-Animationen.
- * Nutzt den Intersection Observer, um Elemente beim Scrollen einzublenden.
- */
 const Reveal = ({ children, delay = 0, className = "", direction = "up" }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
@@ -57,9 +56,8 @@ const Reveal = ({ children, delay = 0, className = "", direction = "up" }) => {
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out ${
-        isVisible ? "opacity-100" : "opacity-0"
-      } ${getTranslateClass()} ${className}`}
+      className={`transition-all duration-1000 ease-out ${isVisible ? "opacity-100" : "opacity-0"
+        } ${getTranslateClass()} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
@@ -72,7 +70,6 @@ const Reveal = ({ children, delay = 0, className = "", direction = "up" }) => {
 export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Sanfter Scroll-Handler für Anker-Links
   const scrollTo = (id) => {
     setIsMobileMenuOpen(false);
     const element = document.getElementById(id);
@@ -83,9 +80,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden">
-      
-      {/* --- INJECT CUSTOM STYLES --- */}
-      <style dangerouslySetInnerHTML={{__html: `
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .no-scrollbar::-webkit-scrollbar {
           display: none;
         }
@@ -98,9 +95,9 @@ export default function App() {
       {/* --- NAVIGATION --- */}
       <nav className="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 transition-all" aria-label="Hauptnavigation">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <button 
-            className="flex items-center cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 rounded-sm group" 
-            onClick={() => window.scrollTo(0,0)}
+          <button
+            className="flex items-center cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 rounded-sm group"
+            onClick={() => window.scrollTo(0, 0)}
             aria-label="Zur Startseite"
           >
             <div className="flex flex-col items-start justify-center">
@@ -113,7 +110,6 @@ export default function App() {
             </div>
           </button>
 
-          {/* Desktop Menü */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
             <button onClick={() => scrollTo('philosophie')} className="hover:text-blue-900 transition-colors">Philosophie</button>
             <button onClick={() => scrollTo('referenzen')} className="hover:text-blue-900 transition-colors">Referenzen</button>
@@ -125,8 +121,7 @@ export default function App() {
             </button>
           </div>
 
-          {/* Mobiles Menü Toggle */}
-          <button 
+          <button
             className="md:hidden text-slate-900 p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 rounded-sm"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
@@ -136,7 +131,6 @@ export default function App() {
           </button>
         </div>
 
-        {/* Mobiles Menü Dropdown */}
         <div className={`md:hidden bg-white border-b border-slate-200 overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
           <div className="px-6 py-4 flex flex-col gap-4 text-center">
             <button onClick={() => scrollTo('philosophie')} className="text-slate-600 py-2">Philosophie</button>
@@ -164,7 +158,7 @@ export default function App() {
 
             <Reveal delay={100}>
               <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Als Dienstleister im Gesundheits- und Wellnessbereich ist Ihre Website der erste Eindruck. 
+                Als Dienstleister im Gesundheits- und Wellnessbereich ist Ihre Website der erste Eindruck.
                 Ich entwickle für Sie hochperformante, maßgeschneiderte Internetauftritte – kompromisslos optimiert für Smartphones und lokale Sichtbarkeit.
               </p>
             </Reveal>
@@ -197,43 +191,37 @@ export default function App() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* 1. Performance */}
-              <FeatureCard 
+              <FeatureCard
                 delay={100}
                 icon={<Zap size={28} className="text-blue-900" />}
                 title="High-End-Performance"
                 description="Baukästen laden oft unnötigen Code, der Ihre Webseite verlangsamt. Ich nutze die moderne Astro-Architektur für exzellente Effizienz: Blitzschnelle Ladezeiten ohne Ballast senken die Absprungrate und schaffen das ideale Fundament für ein starkes Google Ranking."
               />
-              {/* 2. Modulare Maßarbeit */}
-              <FeatureCard 
+              <FeatureCard
                 delay={200}
                 icon={<Code2 size={28} className="text-blue-900" />}
                 title="Modulare Maßarbeit"
                 description="Statt an starre Templates gebunden zu sein programmiere ich Ihre Seite individuell mit dem React-Framework. Sie erhalten ein einzigartiges und professionelles Website-Design mit größtmöglicher technischer Flexibilität, das sich exakt an Ihre Praxisprozesse anpasst."
               />
-              {/* 3. Unabhängigkeit */}
-              <FeatureCard 
+              <FeatureCard
                 delay={300}
                 icon={<ShieldCheck size={28} className="text-blue-900" />}
                 title="Volle Unabhängigkeit"
                 description="Keine monatliche Miete, kein Vendor-Lock-in. Ich räume Ihnen zeitlich und räumlich unbegrenzte Nutzungsrechte am Code ein. So behalten Sie dauerhaft die volle Kontrolle über Hosting, Skalierung und künftige Anpassungen, ohne an Abo-Modelle gebunden zu sein."
               />
-              {/* 4. SEO Optimierung */}
-              <FeatureCard 
+              <FeatureCard
                 delay={400}
                 icon={<Search size={28} className="text-blue-900" />}
                 title="Gezielte SEO-Optimierung"
                 description="Baukästensysteme stoßen bei der Suchmaschinenoptimierung oft an Grenzen. Meine Strategie erlaubt die hochpräzise Steuerung relevanter technischer On-Page-Faktoren und schafft so ein exzellentes Fundament für Ihre regionale Sichtbarkeit bei Google."
               />
-              {/* 5. Nahtlose Integration */}
-              <FeatureCard 
+              <FeatureCard
                 delay={500}
                 icon={<Calendar size={28} className="text-blue-900" />}
                 title="Nahtlose Integration"
                 description="Ob Buchungswidgets von Doctolib, Jameda oder Treatwell – ich binde Ihre bestehenden Systeme nahtlos ein. Dank maßgeschneidertem Code bleibt Ihre Website dauerhaft flexibel erweiterbar und wächst mit nahezu grenzenlosem technischem Spielraum an Ihren neuen Anforderungen."
               />
-              {/* 6. Konsequent Mobile-First */}
-              <FeatureCard 
+              <FeatureCard
                 delay={600}
                 icon={<Smartphone size={28} className="text-blue-900" />}
                 title="Konsequent Mobile-First"
@@ -263,38 +251,49 @@ export default function App() {
                     <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full">Physiotherapie & Massage</span>
                     <span className="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full">One-Pager</span>
                   </div>
-                  
+
                   <h3 className="font-serif text-3xl text-slate-900 mb-4">Bodywork Berlin</h3>
                   <p className="text-slate-600 mb-8 leading-relaxed">
                     Für Bodywork Berlin wurde ein umfassendes Redesign realisiert. Ziel war es, die veraltete Präsenz zu modernisieren, die Performance spürbar zu optimieren und die Seite durch ein SEO-optimiertes &quot;Mobile First&quot;-Design professionell in Szene zu setzen, individuell und präzise nach den Wünschen der Praxis.
                   </p>
 
-                  <div className="space-y-5 mb-10">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-900 shrink-0">
+                  <div className="space-y-6 mb-10">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-900 shrink-0 mt-1">
                         <BarChart3 size={24} />
                       </div>
-                      <div>
-                        <p className="text-slate-900 font-semibold">100 / 100 Performance Score</p>
-                        <p className="text-sm text-slate-500">Google Lighthouse Bestnote</p>
+                      <div className="w-full">
+                        <p className="text-slate-900 font-semibold mb-2">Google Lighthouse Scores <span className="text-slate-400 font-normal text-sm">*</span></p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-1.5 text-sm text-slate-600">
+                          <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0"></span>100/100 Leistung</span>
+                          <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0"></span>100/100 Best Practices</span>
+                          <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0"></span>95/100 Barrierefreiheit</span>
+                          <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0"></span>100/100 SEO</span>
+                        </div>
                       </div>
                     </div>
-                    
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-900 shrink-0">
+
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-900 shrink-0 mt-1">
                         <Timer size={24} />
                       </div>
-                      <div>
-                        <p className="text-slate-900 font-semibold">&lt; 0.5s Ladezeit</p>
-                        <p className="text-sm text-slate-500">Dank meiner modernen Code-Architektur</p>
+                      <div className="w-full">
+                        <p className="text-slate-900 font-semibold mb-1">&lt; 0.5s Desktop / 1.0s Mobil <span className="text-slate-400 font-normal text-sm">*</span></p>
+                        <p className="text-sm text-slate-600">Dank effizienter Programmierung</p>
                       </div>
                     </div>
                   </div>
 
-                  <a href="https://www.bodywork-berlin.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-blue-900 font-medium hover:text-blue-700 transition-colors group">
-                    Live-Seite ansehen 
+                  <a href="https://www.bodywork-berlin.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-blue-900 font-medium hover:text-blue-700 transition-colors group mb-8">
+                    Live-Seite ansehen
                     <ExternalLink size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </a>
+
+                  <div className="pt-5 border-t border-slate-100">
+                    <p className="text-[0.65rem] text-slate-400 leading-relaxed">
+                      * <a href="https://pagespeed.web.dev/analysis/https-bodywork-berlin-com/ii18pa7v1f?form_factor=desktop" target="_blank" rel="noopener noreferrer" className="underline hover:text-slate-500 transition-colors">Gemessen zum Launch</a>. Hinweis: Bei mobilen Leistungstests schwanken die Werte minimal, da Google standardmäßig eine langsame 4G-Verbindung simuliert (Drosselung).
+                    </p>
+                  </div>
                 </Reveal>
               </div>
 
@@ -309,14 +308,14 @@ export default function App() {
         </section>
 
         {/* --- ABOUT ME --- */}
-        <section id="about" className="py-24 bg-slate-50">
+        <section id="about" className="py-24 bg-slate-50 border-b border-slate-200">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
               <Reveal direction="right">
                 <div className="relative">
-                  <img 
-                    src="/webdesigner-berlin-praxen-salons-laurenz-gilbert.webp" 
-                    alt="Laurenz Gilbert - Webdesigner" 
+                  <img
+                    src="/webdesigner-berlin-praxen-salons-laurenz-gilbert.webp"
+                    alt="Laurenz Gilbert - Webdesigner"
                     className="aspect-[3/4] md:aspect-square object-cover w-full bg-slate-200 rounded-sm border border-slate-200 relative z-10 shadow-sm"
                   />
                   <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-white border border-slate-200 rounded-sm -z-10 hidden md:block"></div>
@@ -324,22 +323,52 @@ export default function App() {
               </Reveal>
 
               <Reveal direction="left" delay={100}>
-                <h2 className="font-serif text-3xl md:text-4xl text-slate-900 mb-6">Ihr Partner für digitale Seriosität</h2>
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                  Guten Tag, mein Name ist Laurenz Gilbert. Mein Studium der Wirtschaftsinformatik an der Universität Potsdam habe ich mit einem 1er-Schnitt abgeschlossen. So verbinde ich als IT-Experte modernstes akademisches Know-how mit einem klaren Verständnis für Ihre geschäftlichen Anforderungen.
-                </p>
-                <p className="text-slate-600 mb-8 leading-relaxed">
-                  Durch meine Erfahrungen in der Unternehmensberatung bei Deloitte und meine aktuelle Tätigkeit am renommierten Hasso-Plattner-Institut (HPI) weiß ich, worauf es bei professionellen IT-Lösungen ankommt. Diese Expertise nutze ich parallel, um Ärzten, Therapeuten und Studios präzise, handprogrammierte Premium-Webseiten zu entwickeln, die durch exzellente Performance messbar zur Neukundengewinnung beitragen.
-                </p>
-                
-                <div className="grid grid-cols-2 gap-6 pt-6 border-t border-slate-200">
+                <h2 className="font-serif text-3xl md:text-4xl text-slate-900 mb-6">Ihr Partner für digitale Seriosität und messbaren Erfolg</h2>
+                <div className="space-y-6 text-slate-600 leading-relaxed">
+                  <p>
+                    Guten Tag, mein Name ist Laurenz Gilbert. Als Wirtschaftsinformatiker (B.Sc., Universität Potsdam) mit einem Abschluss von 1,7 und Masterstudent an der TU Berlin verbinde ich tiefgreifendes akademisches Know-how mit praktischer Anwendungsorientierung. Durch meine Tätigkeit am renommierten Hasso-Plattner-Institut (HPI) bin ich zudem stets am Puls modernster IT-Entwicklungen.
+                  </p>
+                  <p>
+                    Meine Erfahrungen im Technologie-Umfeld bei Deloitte sowie der erfolgreiche Aufbau meines eigenen E-Commerce-Unternehmens haben mir gezeigt, worauf es bei professionellen und wirtschaftlich rentablen IT-Lösungen ankommt. Zudem kenne ich durch meine Mitarbeit in einer ärztlichen Praxis die spezifischen Abläufe und hohen Anforderungen des Gesundheitssektors aus erster Hand.
+                  </p>
+                  <p>
+                    Diese gebündelte Expertise nutze ich heute, um für Ärzte, Therapeuten und Studios präzise, handprogrammierte Premium-Webseiten zu entwickeln. Mit modernsten Technologien auf Agentur-Niveau (wie Astro & React) sorge ich für exzellente Performance, die Ihre Praxis professionell repräsentiert und messbar zur Neukundengewinnung beiträgt.
+                  </p>
+                </div>
+              </Reveal>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-12 border-t border-slate-200">
+              <Reveal delay={100}>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-blue-900 text-white rounded-sm flex items-center justify-center shrink-0">
+                    <GraduationCap size={20} />
+                  </div>
                   <div>
                     <h3 className="font-serif text-slate-900 font-medium mb-1">Fundierte Expertise</h3>
-                    <p className="text-sm text-slate-500">Ich biete Ihnen Wissen aus Studium (Uni Potsdam) und Praxis bei Deloitte & HPI.</p>
+                    <p className="text-sm text-slate-500 leading-relaxed">Ich biete Ihnen Wissen aus meinem Studium an der Uni Potsdam und TU Berlin sowie hochkarätige Erfahrung aus der Praxis bei Deloitte und am HPI.</p>
+                  </div>
+                </div>
+              </Reveal>
+              <Reveal delay={200}>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-blue-900 text-white rounded-sm flex items-center justify-center shrink-0">
+                    <Briefcase size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-slate-900 font-medium mb-1">Branchenverständnis</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed">Durch direkte Einblicke in ärztliche Praxisabläufe und eigene unternehmerische Erfolge verstehe ich Ihre geschäftlichen Anforderungen genau.</p>
+                  </div>
+                </div>
+              </Reveal>
+              <Reveal delay={300} className="sm:col-span-2 lg:col-span-1">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-blue-900 text-white rounded-sm flex items-center justify-center shrink-0">
+                    <Cpu size={20} />
                   </div>
                   <div>
                     <h3 className="font-serif text-slate-900 font-medium mb-1">Modernste Technik</h3>
-                    <p className="text-sm text-slate-500">Ich programmiere für Sie auf Agentur-Niveau mit Astro & React.</p>
+                    <p className="text-sm text-slate-500 leading-relaxed">Ich programmiere für Sie auf Agentur-Niveau mit Astro & React für kompromisslose Performance, Sicherheit und blitzschnelle Ladezeiten.</p>
                   </div>
                 </div>
               </Reveal>
@@ -360,7 +389,6 @@ export default function App() {
             </Reveal>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {/* Basis-Paket */}
               <Reveal delay={100} direction="up" className="h-full">
                 <div className="bg-slate-50 p-6 md:p-8 border border-slate-200 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col relative">
                   <div className="flex-grow flex flex-col relative z-10">
@@ -392,7 +420,6 @@ export default function App() {
                 </div>
               </Reveal>
 
-              {/* Premium-Paket */}
               <Reveal delay={200} direction="up" className="h-full">
                 <div className="bg-[#0f172a] p-6 md:p-8 border border-slate-800 rounded-sm shadow-lg h-full flex flex-col relative overflow-hidden">
                   <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 uppercase tracking-wider z-20">
@@ -440,23 +467,23 @@ export default function App() {
             </Reveal>
 
             <div className="space-y-4">
-              <AccordionItem 
+              <AccordionItem
                 question="Warum nutzen Sie keine Baukastensysteme?"
                 answer="Standard-Lösungen sind oft überladen mit unnötigem Code, was sie langsam macht. Eine von mir handprogrammierte Seite ist extrem performant, bietet mir exakte Kontrolle über das Design und sendet positive Signale an Google. Zudem bin ich bei der Umsetzung nicht an die Limitierungen von Drittanbietern gebunden."
                 delay={100}
               />
-              <AccordionItem 
+              <AccordionItem
                 question="Ist die Website rechtssicher und DSGVO-konform?"
                 answer="Ich bereite Ihre Website technisch so vor, dass sie die aktuellen Anforderungen der DSGVO erfüllt. Dazu gehört die technische Integration von Impressum, Datenschutzerklärung und eines Consent-Tools (Cookie-Banner). Bitte beachten Sie: Als Webdesigner darf ich keine Rechtsberatung durchführen. Die finale juristische Prüfung der Inhalte obliegt Ihnen als Seitenbetreiber."
                 delay={200}
               />
-              <AccordionItem 
+              <AccordionItem
                 question="Wie lange dauert die Erstellung meiner neuen Praxis-Website?"
                 answer="Für einen One-Pager plane ich in der Regel 2 bis 3 Wochen ab Erhalt aller Materialien ein. Bei einem umfangreicheren Multi-Pager sollten Sie etwa 4 bis 6 Wochen für Konzept, Design, Programmierung und Abstimmung mit mir einplanen."
                 delay={300}
               />
-              <AccordionItem 
-                question="Kümmern Sie sich auch um Wartung und Updates?"
+              <AccordionItem
+                question="Kümmerst du dich auch um Wartung und Updates?"
                 answer="Ja. Da ich auf moderne Webarchitekturen setze, sind die von mir erstellten Seiten von Grund auf sicherer und deutlich wartungsärmer als klassische CMS-Systeme (wie z.B. WordPress). Dennoch biete ich Ihnen auf Wunsch transparente Pflegepakete an, damit Sie sich vollständig auf Ihre Arbeit konzentrieren können."
                 delay={400}
               />
@@ -472,7 +499,7 @@ export default function App() {
             <div>
               <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Bereit für Ihren digitalen Aufstieg?</h2>
               <p className="text-slate-400 mb-8 max-w-md leading-relaxed">
-                Als spezialisierter Webdesigner für Physiotherapeuten, Arztpraxen und Kosmetikstudios verstehe ich Ihre Anforderungen genau. 
+                Als spezialisierter Webdesigner für Physiotherapeuten, Arztpraxen und Kosmetikstudios verstehe ich Ihre Anforderungen genau.
                 Vereinbaren Sie ein unverbindliches Erstgespräch und lassen Sie uns besprechen, wie ich Ihre digitale Präsenz auf ein Premium-Niveau hebe.
               </p>
               <a href="mailto:kontakt@lcg-webdesign.de" className="inline-flex items-center gap-2 text-white font-medium hover:text-blue-400 transition-colors text-lg">
@@ -480,22 +507,22 @@ export default function App() {
                 kontakt@lcg-webdesign.de
               </a>
             </div>
-            
+
             <div className="bg-slate-800/50 p-8 md:p-10 border border-slate-700 rounded-sm flex flex-col justify-center relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-blue-600"></div>
               <h3 className="font-serif text-2xl text-white mb-3">Schreiben Sie mir direkt</h3>
               <p className="text-slate-400 mb-8 text-sm leading-relaxed">
                 Klicken Sie auf den Button, um direkt eine E-Mail mit einer vorbereiteten Vorlage in Ihrem E-Mail-Programm zu öffnen. Ich antworte Ihnen in der Regel innerhalb von 24 Stunden.
               </p>
-              
-              <a 
+
+              <a
                 href="mailto:kontakt@lcg-webdesign.de?subject=Unverbindliche%20Anfrage%20-%20Webdesign&body=Hallo%20Herr%20Gilbert%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20neue%20Website%20und%20h%C3%A4tte%20gerne%20weitere%20Informationen.%0A%0AHier%20sind%20meine%20Kontaktdaten%3A%0AName%3A%20%0APraxis%2FUnternehmen%3A%20%0ATelefonnummer%20f%C3%BCr%20R%C3%BCckruf%3A%20%0A%0AViele%20Gr%C3%BC%C3%9Fe"
                 className="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-4 px-6 rounded-sm transition-all flex items-center justify-center gap-3 shadow-lg shadow-blue-900/20 group"
               >
                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 E-Mail Vorlage öffnen
               </a>
-              
+
               <div className="mt-8 text-center pt-6 border-t border-slate-700/50">
                 <p className="text-xs text-slate-500 mb-1">Oder manuell kopieren:</p>
                 <p className="text-slate-300 font-medium select-all cursor-pointer hover:text-white transition-colors">
@@ -556,19 +583,19 @@ function AccordionItem({ question, answer, delay }) {
   return (
     <Reveal delay={delay}>
       <div className="border border-slate-200 rounded-sm bg-white overflow-hidden">
-        <button 
+        <button
           onClick={() => setIsOpen(!isOpen)}
           className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none focus-visible:bg-slate-50"
           aria-expanded={isOpen}
         >
           <span className="font-serif text-lg text-slate-900 pr-8">{question}</span>
-          <ChevronDown 
-            size={20} 
-            className={`text-slate-400 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
+          <ChevronDown
+            size={20}
+            className={`text-slate-400 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
             aria-hidden="true"
           />
         </button>
-        <div 
+        <div
           className="grid transition-all duration-300 ease-in-out"
           style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
         >
@@ -627,14 +654,14 @@ function AutoScrollMockup() {
         if (currentSpeed.current < 0.35) {
           currentSpeed.current += 0.002;
         }
-        
-        exactScrollPos.current += currentSpeed.current; 
+
+        exactScrollPos.current += currentSpeed.current;
         scrollContainer.scrollTop = exactScrollPos.current;
 
         if (scrollContainer.scrollTop >= scrollContainer.scrollHeight - scrollContainer.clientHeight - 1) {
           exactScrollPos.current = 0;
           scrollContainer.scrollTop = 0;
-          currentSpeed.current = 0; 
+          currentSpeed.current = 0;
         }
       } else {
         currentSpeed.current = 0;
@@ -658,23 +685,23 @@ function AutoScrollMockup() {
       <div className="absolute top-24 -left-1 w-1 h-10 bg-slate-800 rounded-l-md"></div>
       <div className="absolute top-36 -left-1 w-1 h-10 bg-slate-800 rounded-l-md"></div>
       <div className="absolute top-32 -right-1 w-1 h-14 bg-slate-800 rounded-r-md"></div>
-      
+
       <div className="relative w-full h-full bg-slate-50 rounded-[2.5rem] overflow-hidden border-[3px] border-slate-950">
         <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-6 bg-black rounded-full z-20 pointer-events-none flex items-center justify-end px-2">
           <div className="w-2.5 h-2.5 bg-slate-800 rounded-full border border-slate-700/50"></div>
         </div>
-        
-        <div 
+
+        <div
           ref={scrollRef}
           className="absolute inset-0 bg-white overflow-y-scroll no-scrollbar"
           onWheel={handleUserInteraction}
           onTouchStart={handleUserInteraction}
           onMouseDown={handleUserInteraction}
         >
-          <img 
-            src="/webdesign-berlin-bodywork-praxis-beispiel-mobile.webp" 
-            alt="Bodywork Berlin Mobile Screenshot" 
-            className="w-full h-auto block pointer-events-none select-none" 
+          <img
+            src="/webdesign-berlin-bodywork-praxis-beispiel-mobile.webp"
+            alt="Bodywork Berlin Mobile Screenshot"
+            className="w-full h-auto block pointer-events-none select-none"
           />
         </div>
       </div>
