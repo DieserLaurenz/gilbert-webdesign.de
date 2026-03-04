@@ -389,6 +389,7 @@ export default function App() {
             </Reveal>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* Digitale Visitenkarte */}
               <Reveal delay={100} direction="up" className="h-full">
                 <div className="bg-slate-50 p-6 md:p-8 border border-slate-200 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col relative">
                   <div className="flex-grow flex flex-col relative z-10">
@@ -401,15 +402,17 @@ export default function App() {
                       </div>
                     </div>
                     <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                      Die perfekte Lösung für spezialisierte Therapeuten oder Neugründungen. Ich bündele alle wichtigen Informationen kompakt, elegant und verkaufsstark auf einer einzigen, hochoptimierten Seite.
+                      Die perfekte Lösung für spezialisierte Therapeuten oder Neugründungen. Alle wichtigen Informationen auf einer einzigen, hochoptimierten Seite.
                     </p>
                     <ul className="space-y-3 mb-8">
-                      <ListItem text="Individuelles Premium-Design (Kein Template)" />
-                      <ListItem text="Konsequente Mobile-First Umsetzung" />
-                      <ListItem text="Integration Online-Terminbuchung" />
-                      <ListItem text="Integration Google Maps / Anfahrt" />
-                      <ListItem text="Technisches SEO Fundament" />
-                      <ListItem text="Standardgemäße DSGVO-Vorbereitung" />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">1 hochoptimierte Hauptseite</strong> (zzgl. Rechtstexte)</>} />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">Kompakte Leistungsübersicht</strong> (flüssig & schnell)</>} />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">Technisches SEO-Fundament</strong> für die lokale Suche</>} />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">Buchungs-Integration</strong> (Doctolib, Jameda etc.)</>} />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">Kontakt & Google Maps</strong> für direkte Anfragen</>} />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">0 € laufende Hosting-Kosten</strong> (moderne Cloud)</>} />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">1 Korrekturschleife</strong> für optisches Feintuning</>} />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">30 Tage</strong> Post-Launch-Support (für Bugfixes)</>} />
                     </ul>
                   </div>
                   <div className="mt-auto flex flex-col relative z-10 shrink-0">
@@ -420,6 +423,7 @@ export default function App() {
                 </div>
               </Reveal>
 
+              {/* Umfassende Praxis-Website */}
               <Reveal delay={200} direction="up" className="h-full">
                 <div className="bg-[#0f172a] p-6 md:p-8 border border-slate-800 rounded-sm shadow-lg h-full flex flex-col relative overflow-hidden">
                   <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 uppercase tracking-wider z-20">
@@ -435,14 +439,17 @@ export default function App() {
                       </div>
                     </div>
                     <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                      Für etablierte Arztpraxen und Salons mit umfangreichem Leistungsangebot. Ich erstelle strukturierte Unterseiten für jede Dienstleistung, um Ihre Patienten optimal zu informieren.
+                      Für etablierte Arztpraxen und Salons mit umfangreichem Leistungsangebot. Strukturierte Unterseiten für jede Dienstleistung.
                     </p>
                     <ul className="space-y-3 mb-8">
-                      <ListItem text="Alles aus der Digitalen Visitenkarte" dark />
-                      <ListItem text="Dedizierte Unterseiten pro Leistungsbereich" dark />
-                      <ListItem text="Erweitertes Team- & Praxis-Vorstellungsprofil" dark />
-                      <ListItem text="Erweiterte Vorbereitung für Lokales SEO" dark />
-                      <ListItem text="Schnellste Ladezeiten durch Astro.js Architektur" dark />
+                      <ListItem dark text={<><strong className="text-white font-semibold">Alles aus der Digitalen Visitenkarte</strong>, plus:</>} />
+                      <ListItem dark text={<><strong className="text-white font-semibold">Bis zu 8 Unterseiten</strong> (für Ihre Leistungen)</>} />
+                      <ListItem dark text={<><strong className="text-white font-semibold">Tiefgreifendes On-Page-SEO</strong> pro Unterseite</>} />
+                      <ListItem dark text={<><strong className="text-white font-semibold">Ausführliches Team- & Praxisprofil</strong></>} />
+                      <ListItem dark text={<><strong className="text-white font-semibold">Google Business Profil:</strong> Setup & Beratung</>} />
+                      <ListItem dark text={<><strong className="text-white font-semibold">Mehrsprachigkeit:</strong> Englische Version auf Wunsch</>} />
+                      <ListItem dark text={<><strong className="text-white font-semibold">2 Korrekturschleifen</strong> für maximale Präzision</>} />
+                      <ListItem dark text={<><strong className="text-white font-semibold">60 Tage</strong> Post-Launch-Support (für Bugfixes)</>} />
                     </ul>
                   </div>
                   <div className="mt-auto flex flex-col relative z-10 shrink-0">
@@ -453,6 +460,59 @@ export default function App() {
                 </div>
               </Reveal>
             </div>
+
+            {/* --- WARTUNGSPAKETE --- */}
+            <div className="mt-24 max-w-4xl mx-auto">
+              <Reveal>
+                <div className="text-center mb-12">
+                  <h3 className="font-serif text-2xl md:text-3xl text-slate-900 mb-4">Optionale Wartungspakete</h3>
+                  <p className="text-slate-600">
+                    Lehnen Sie sich zurück. Ich kümmere mich um die Technik, Sicherheit und regelmäßige Updates Ihrer Website, damit Sie sich voll auf Ihre Patienten konzentrieren können.
+                  </p>
+                </div>
+              </Reveal>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Basis Paket */}
+                <Reveal delay={100} direction="up" className="h-full">
+                  <div className="bg-white p-6 md:p-8 border border-slate-200 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+                    <div className="mb-6 border-b border-slate-100 pb-6">
+                      <h4 className="font-serif text-xl text-slate-900 mb-2">Basis</h4>
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="text-3xl font-bold text-slate-900">29 €</span>
+                        <span className="text-sm text-slate-500 font-medium">/ Monat (zzgl. MwSt.)</span>
+                      </div>
+                    </div>
+                    <ul className="space-y-3 mb-8 flex-grow">
+                      <ListItem text="Bis zu 2 Inhaltsänderungen/Monat" />
+                      <ListItem text="Regelmäßige Updates (quartalsweise)" />
+                      <ListItem text="Kontinuierliches Hosting-Monitoring" />
+                    </ul>
+                  </div>
+                </Reveal>
+
+                {/* Rundum-Sorglos Paket */}
+                <Reveal delay={200} direction="up" className="h-full">
+                  <div className="bg-blue-50/50 p-6 md:p-8 border border-blue-100 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-blue-400"></div>
+                    <div className="mb-6 border-b border-blue-100 pb-6">
+                      <h4 className="font-serif text-xl text-blue-900 mb-2">Rundum-Sorglos</h4>
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="text-3xl font-bold text-blue-900">59 €</span>
+                        <span className="text-sm text-blue-700 font-medium">/ Monat (zzgl. MwSt.)</span>
+                      </div>
+                    </div>
+                    <ul className="space-y-3 mb-8 flex-grow">
+                      <ListItem text="Bis zu 5 Inhaltsänderungen/Monat" />
+                      <ListItem text="Quartalsweiser Performance-Report" />
+                      <ListItem text="Google Search Console Auswertungen" />
+                      <ListItem text="Prioritätssupport (Antwort < 24h)" />
+                    </ul>
+                  </div>
+                </Reveal>
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -568,11 +628,14 @@ function FeatureCard({ icon, title, description, delay }) {
   );
 }
 
-function ListItem({ text, dark = false }) {
+function ListItem({ text, highlight, dark = false }) {
   return (
     <li className="flex items-start gap-2.5">
       <CheckCircle size={18} className={`shrink-0 mt-0.5 ${dark ? 'text-blue-400' : 'text-blue-900'}`} />
-      <span className={`text-sm ${dark ? 'text-slate-300' : 'text-slate-700'}`}>{text}</span>
+      <span className={`text-sm leading-relaxed ${dark ? 'text-slate-300' : 'text-slate-700'}`}>
+        {highlight && <strong className={`${dark ? 'text-white' : 'text-slate-900'} font-semibold mr-1`}>{highlight}</strong>}
+        {text}
+      </span>
     </li>
   );
 }
