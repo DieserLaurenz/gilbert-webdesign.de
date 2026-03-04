@@ -509,7 +509,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-slate-800 text-xs text-slate-500 text-center md:text-left flex flex-col gap-2">
+            <div className="mt-12 pt-6 border-t border-slate-200 text-xs text-slate-500 text-center flex flex-col gap-2 max-w-4xl mx-auto">
               <p>Alle Angebote auf dieser Webseite richten sich ausschließlich an Gewerbetreibende, Freiberufler sowie juristische Personen des öffentlichen Rechts oder öffentlich-rechtliche Sondervermögen (B2B). Alle Preise verstehen sich zzgl. der gesetzlichen Mehrwertsteuer.</p>
               <p>Die Marken Doctolib, Jameda und Treatwell sind Eigentum ihrer jeweiligen Inhaber. Die Nennung dient lediglich der Beschreibung der technischen Integrationsmöglichkeiten.</p>
             </div>
