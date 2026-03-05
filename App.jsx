@@ -508,9 +508,9 @@ export default function App() {
                   {/* Right Column - Features */}
                   <div className="w-full lg:w-8/12 p-8 md:p-12 flex flex-col justify-center bg-white relative">
                     <ul className="space-y-4 w-full mb-6">
-                      <ListItem text={<><strong className="text-slate-900 font-semibold">Technischer Support & Beratung</strong> zu Hosting, Domain und CMS-System</>} />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">Technischer Support</strong> zu Hosting, Domain und CMS-System</>} />
                       <ListItem text={<><strong className="text-slate-900 font-semibold">Reaktionszeit</strong> in der Regel 1-2 Werktage</>} />
-                      <ListItem text={<><strong className="text-slate-900 font-semibold">Support & Beratung inklusive</strong> bis zu 30 Minuten pro Monat</>} />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">Support inklusive</strong> bis zu 30 Minuten pro Monat</>} />
                       <ListItem text={<><strong className="text-slate-900 font-semibold">1 optische Änderung pro Monat</strong> inklusive (max. 30 Minuten)</>} />
                       <ListItem text={<><strong className="text-slate-900 font-semibold">Gesamt inklusive</strong> bis zu 60 Minuten pro Monat</>} />
                       <ListItem text={<span className="text-slate-500">Weitere Leistungen nach Aufwand (95 € netto/Stunde)</span>} />
