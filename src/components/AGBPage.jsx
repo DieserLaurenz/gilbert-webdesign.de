@@ -47,9 +47,9 @@ export default function AGB() {
       {/* --- NAVIGATION --- */}
       <nav className="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 transition-all" aria-label="Hauptnavigation">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <a 
+          <a
             href="/"
-            className="flex items-center cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 rounded-sm group" 
+            className="flex items-center cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 rounded-sm group"
             aria-label="Zur Startseite"
           >
             <div className="flex flex-col items-start justify-center">
@@ -75,7 +75,7 @@ export default function AGB() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className="md:hidden text-slate-900 p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 rounded-sm"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
@@ -103,7 +103,6 @@ export default function AGB() {
       {/* --- MAIN CONTENT: AGB --- */}
       <main className="flex-grow pt-32 pb-24 px-6">
         <div className="max-w-4xl mx-auto">
-          
           <Reveal>
             <a href="/" className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-blue-900 transition-colors mb-8 group">
               <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
@@ -118,7 +117,6 @@ export default function AGB() {
               </h1>
 
               <div className="space-y-12 text-slate-600 leading-relaxed">
-                
                 {/* § 1 Geltungsbereich */}
                 <section>
                   <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 1 Geltungsbereich</h2>
@@ -139,9 +137,23 @@ export default function AGB() {
                   </div>
                 </section>
 
-                {/* § 3 Mitwirkungspflichten des Auftraggebers & Hosting */}
+                {/* § 3 Wartungs- und Supportleistungen („Rundum-Sorglos-Paket“) */}
                 <section>
-                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 3 Mitwirkungspflichten des Auftraggebers & Hosting</h2>
+                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 3 Wartungs- und Supportleistungen („Rundum-Sorglos-Paket“)</h2>
+                  <div className="space-y-4">
+                    <p>(1) Bucht der Auftraggeber optional das fortlaufende Wartungs- und Supportpaket („Rundum-Sorglos-Paket“), kommt hierüber ein separater Vertrag über laufende Dienstleistungen (Dauerschuldverhältnis) zustande.</p>
+                    <p>(2) Der Leistungsumfang umfasst die technische Beratung und den Support zu Hosting, Domain und dem eingesetzten CMS sowie die Umsetzung kleinerer optischer Änderungen. Die reguläre Reaktionszeit des Auftragnehmers auf Support-Anfragen beträgt in der Regel 1 bis 2 Werktage.</p>
+                    <p>(3) Im Rahmen der monatlichen Pauschale sind Support- und Anpassungsleistungen im Umfang von insgesamt bis zu 60 Minuten pro Kalendermonat (davon max. 30 Minuten für optische Änderungen) inklusive. Nicht in Anspruch genommene Inklusivminuten verfallen am Ende des jeweiligen Kalendermonats und können nicht in den Folgemonat übertragen oder ausbezahlt werden.</p>
+                    <p>(4) Leistungen, die über die inkludierten 60 Minuten hinausgehen, werden nur nach vorheriger Absprache mit dem Auftraggeber erbracht. Diese Zusatzleistungen werden nach tatsächlichem Aufwand mit einem Stundensatz von 95,00 € netto abgerechnet.</p>
+                    <p>(5) Die monatliche Vergütung für das Wartungspaket in Höhe von 59,00 € netto wird jeweils monatlich im Voraus in Rechnung gestellt und ist ohne Abzug sofort fällig.</p>
+                    <p>(6) Der Wartungsvertrag wird auf unbestimmte Zeit geschlossen. Er hat keine Mindestlaufzeit und kann von beiden Parteien jederzeit mit einer Frist von 14 Tagen zum Ende des jeweiligen Abrechnungsmonats in Textform (z. B. per E-Mail) gekündigt werden. Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt hiervon unberührt.</p>
+                    <p>(7) Soweit der Auftragnehmer im Rahmen der Supportarbeiten im Auftrag des Kunden auf personenbezogene Daten (z. B. in Formularen oder Buchungssystemen) zugreift, wird der Auftraggeber darauf hingewiesen, dass hierfür der Abschluss eines separaten Vertrags zur Auftragsverarbeitung (AVV) gemäß Art. 28 DSGVO erforderlich ist. Dieser wird vom Auftragnehmer auf Anfrage bereitgestellt.</p>
+                  </div>
+                </section>
+
+                {/* § 4 Mitwirkungspflichten des Auftraggebers & Hosting */}
+                <section>
+                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 4 Mitwirkungspflichten des Auftraggebers & Hosting</h2>
                   <div className="space-y-4">
                     <p>Das Hosting der Website sowie die Code-Verwaltung erfolgen über Drittanbieter (z. B. Cloudflare Pages, GitHub). Der Auftraggeber verpflichtet sich, die hierfür notwendigen Konten auf eigenen Namen und eigene Rechnung anzulegen. Vertragspartner dieser Drittanbieter wird ausschließlich der Auftraggeber.</p>
                     <p>Zur Gewährleistung der Entwicklung sowie vertraglich vereinbarter Wartungs- und Support-Leistungen räumt der Auftraggeber dem Auftragnehmer einen administrativen Zugang bzw. Mitwirkenden-Zugang („Collaborator“) zu diesen Konten ein.</p>
@@ -149,65 +161,67 @@ export default function AGB() {
                   </div>
                 </section>
 
-                {/* § 4 Vergütung und Zahlungsbedingungen */}
+                {/* § 5 Vergütung und Zahlungsbedingungen */}
                 <section>
-                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 4 Vergütung und Zahlungsbedingungen</h2>
+                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 5 Vergütung und Zahlungsbedingungen</h2>
                   <div className="space-y-4">
-                    <p>Sofern im Angebot nicht anders vereinbart, ist die vereinbarte Gesamtvergütung für die Erstellung der Website vollständig im Voraus (Vorkasse) fällig.</p>
-                    <p>Die Rechnungsstellung erfolgt unmittelbar nach Vertragsabschluss. Der Auftragnehmer beginnt mit den vertraglich vereinbarten Entwicklungsarbeiten erst nach vollständigem Zahlungseingang.</p>
-                    <p>Alle genannten Preise verstehen sich netto zuzüglich der jeweils geltenden gesetzlichen Umsatzsteuer.</p>
+                    <p>Sofern im Angebot nicht anders vereinbart, erfolgt die Abrechnung der vereinbarten Gesamtvergütung für die Erstellung der Website in zwei Raten:</p>
+                    <p>50 % der vereinbarten Vergütung werden als Anzahlung unmittelbar nach Vertragsabschluss in Rechnung gestellt. Der Auftragnehmer beginnt mit den vertraglich vereinbarten Entwicklungsarbeiten erst nach vollständigem Zahlungseingang dieser ersten Rate.</p>
+                    <p>Die restlichen 50 % der Vergütung werden nach erfolgreicher Abnahme der Website (gemäß § 6) bzw. unmittelbar vor der finalen Live-Schaltung (Übertragung auf die Hauptdomain) in Rechnung gestellt.</p>
+                    <p>Alle genannten Preise verstehen sich netto zuzüglich der jeweils geltenden gesetzlichen Umsatzsteuer. Rechnungen sind ohne Abzug nach Erhalt zahlbar.</p>
                   </div>
                 </section>
 
-                {/* § 5 Abnahme (Werkvertragliche Leistungen) */}
+                {/* § 6 Abnahme (Werkvertragliche Leistungen) */}
                 <section>
-                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 5 Abnahme (Werkvertragliche Leistungen)</h2>
+                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 6 Abnahme (Werkvertragliche Leistungen)</h2>
                   <div className="space-y-4">
-                    <p>Nach Fertigstellung der Website stellt der Auftragnehmer diese dem Auftraggeber auf einer Testumgebung (Staging-Domain) oder der finalen Domain zur Prüfung zur Verfügung und fordert den Auftraggeber zur Abnahme auf.</p>
-                    <p>Die Abnahme hat innerhalb von 14 Tagen nach Aufforderung zu erfolgen.</p>
-                    <p>Die Website gilt als stillschweigend abgenommen, wenn der Auftraggeber nicht innerhalb dieser 14-Tage-Frist wesentliche Mängel schriftlich rügt oder wenn er die Website produktiv nutzt (z. B. durch aktive Bewerbung der URL).</p>
+                    <p>(1) Nach Fertigstellung stellt der Auftragnehmer die Website auf einer Testumgebung (Staging-Domain) oder der finalen Domain zur Prüfung bereit und fordert den Auftraggeber in Textform zur Abnahme auf. Die Abnahmefrist beträgt 14 Kalendertage ab Zugang der Aufforderung.</p>
+                    <p>(2) Die Website gilt als abgenommen, wenn der Auftraggeber die Abnahme nicht innerhalb der Abnahmefrist unter Angabe mindestens eines Mangels in Textform verweigert. Auf diese Rechtsfolge wird der Auftragnehmer in der Abnahmeaufforderung hinweisen.</p>
+                    <p>(3) Unabhängig von Abs. 2 gilt die Website ebenfalls als abgenommen, sobald der Auftraggeber sie produktiv nutzt (z. B. durch Freischaltung auf der Hauptdomain oder aktive Bewerbung der URL), sofern nicht zuvor ein wesentlicher Mangel angezeigt wurde.</p>
                   </div>
                 </section>
 
-                {/* § 6 Nutzungsrechte und Open-Source-Software */}
+                {/* § 7 Nutzungsrechte und Open-Source-Software */}
                 <section>
-                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 6 Nutzungsrechte und Open-Source-Software</h2>
+                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 7 Nutzungsrechte und Open-Source-Software</h2>
                   <div className="space-y-4">
-                    <p>Mit vollständiger Bezahlung der vereinbarten Vergütung räumt der Auftragnehmer dem Auftraggeber das ausschließliche, räumliche, zeitliche und inhaltlich unbeschränkte Nutzungsrecht an dem individuell erstellten Programmcode und Design ein. Der Auftraggeber erhält das Recht, den Code nach Belieben zu verändern und zu nutzen.</p>
-                    <p>Soweit im Rahmen der Entwicklung Open-Source-Software (z. B. Astro.js, React, Keystatic) verwendet wird, unterliegt diese den jeweiligen Open-Source-Lizenzen. Die Einräumung der Nutzungsrechte bezieht sich ausschließlich auf den individuell durch den Auftragnehmer erstellten Code.</p>
+                    <p>(1) Mit vollständiger Bezahlung der vereinbarten Vergütung räumt der Auftragnehmer dem Auftraggeber das ausschließliche, räumliche, zeitliche und inhaltlich unbeschränkte Nutzungsrecht an den individuell für den Auftraggeber erstellten Arbeitsergebnissen (insbesondere kundenspezifischer Programmcode und Design) ein. Der Auftraggeber erhält das Recht, diese Arbeitsergebnisse zu verändern und zu nutzen.</p>
+                    <p>(2) Von der vorstehenden Rechteübertragung ausgenommen sind vorbestehende oder unabhängig vom konkreten Auftrag entwickelte Bestandteile des Auftragnehmers (insbesondere Frameworks, Bibliotheken, Module, Templates, Snippets, Build- und Deployment-Konfigurationen, Tools, Methoden und Know-how), soweit diese nicht individuell für den Auftraggeber erstellt wurden. Hieran verbleiben sämtliche Rechte beim Auftragnehmer. Der Auftraggeber erhält daran ein einfaches, räumlich und zeitlich unbeschränktes Nutzungsrecht, soweit dies für die vertragsgemäße Nutzung der Website erforderlich ist.</p>
+                    <p>(3) Soweit im Rahmen der Entwicklung Open-Source-Software (z. B. Astro.js, React, Keystatic) verwendet wird, unterliegt diese den jeweiligen Open-Source-Lizenzen.</p>
                   </div>
                 </section>
 
-                {/* § 7 Haftung und rechtliche Verantwortung */}
+                {/* § 8 Haftung und rechtliche Verantwortung */}
                 <section>
-                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 7 Haftung und rechtliche Verantwortung</h2>
+                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 8 Haftung und rechtliche Verantwortung</h2>
                   <div className="space-y-4">
-                    <p>Der Auftragnehmer haftet bei Vorsatz und grober Fahrlässigkeit unbeschränkt. Bei leichter Fahrlässigkeit haftet der Auftragnehmer nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten), beschränkt auf den vertragstypisch vorhersehbaren Schaden.</p>
-                    <p>Der Auftragnehmer übernimmt keine Haftung für Ausfälle, Datenverluste, Sperrungen oder etwaige Kosten, die durch die Nutzung der Drittanbieter (z. B. Cloudflare, GitHub) entstehen.</p>
-                    <p>
-                      Die rechtliche Verantwortung für die Inhalte der Website, insbesondere das Impressum, die Datenschutzerklärung und rechtskonforme Cookie-Banner, liegt allein beim Auftraggeber. Der Auftragnehmer führt keine Rechtsberatung durch.
-                    </p>
+                    <p>(1) Der Auftragnehmer haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie bei Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit.</p>
+                    <p>(2) Bei einfacher Fahrlässigkeit haftet der Auftragnehmer nur bei Verletzung einer wesentlichen Vertragspflicht (Kardinalpflicht). In diesem Fall ist die Haftung auf den bei Vertragsschluss vorhersehbaren, vertragstypischen Schaden begrenzt.</p>
+                    <p>(3) Die Haftung nach dem Produkthaftungsgesetz sowie nach sonstigen zwingenden gesetzlichen Vorschriften bleibt unberührt.</p>
+                    <p>(4) Für Störungen, Ausfälle, Datenverluste, Sperrungen oder Mehrkosten, die auf Leistungen oder Änderungen von Drittanbietern (insbesondere Cloudflare, GitHub sowie Domain- und Hosting-Provider) oder auf Eingriffe des Auftraggebers bzw. Dritter zurückzuführen sind, haftet der Auftragnehmer nicht, soweit ihn daran kein Verschulden trifft.</p>
+                    <p>Die rechtliche Verantwortung für die Inhalte der Website, insbesondere das Impressum, die Datenschutzerklärung und rechtskonforme Cookie-Banner, liegt allein beim Auftraggeber. Der Auftragnehmer führt keine Rechtsberatung durch.</p>
                   </div>
                 </section>
 
-                {/* § 8 Referenznennung */}
+                {/* § 9 Referenznennung */}
                 <section>
-                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 8 Referenznennung</h2>
+                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 9 Referenznennung</h2>
                   <div className="space-y-4">
-                    <p>Der Auftragnehmer ist berechtigt, den Auftraggeber auf der eigenen Website oder in anderen Werbemedien (z. B. Social Media, Portfolio-Präsentationen) als Referenzkunden namentlich zu nennen und in diesem Zusammenhang das Logo des Auftraggebers sowie Screenshots der erstellten Website zu vervielfältigen und zu veröffentlichen. Der Auftraggeber kann diese Einwilligung jederzeit für die Zukunft schriftlich oder per E-Mail widerrufen, sofern ein berechtigtes Interesse besteht.</p>
+                    <p>Der Auftragnehmer ist berechtigt, den Auftraggeber auf der eigenen Website oder in anderen Werbemedien (z. B. Social Media, Portfolio-Präsentationen) als Referenzkunden namentlich zu nennen und in diesem Zusammenhang das Logo des Auftraggebers sowie Screenshots der erstellten Website zu vervielfältigen und zu veröffentlichen. Der Auftraggeber kann diese Einwilligung aus berechtigtem Grund für die Zukunft in Textform (z. B. per E-Mail) widerrufen.</p>
                   </div>
                 </section>
 
-                {/* § 9 Schlussbestimmungen */}
+                {/* § 10 Schlussbestimmungen */}
                 <section>
-                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 9 Schlussbestimmungen</h2>
+                  <h2 className="font-serif text-2xl text-slate-900 mb-6 pb-2 border-b border-slate-100">§ 10 Schlussbestimmungen</h2>
                   <div className="space-y-4">
+                    <p>Hinweis nach § 36 VSBG: Der Auftragnehmer ist nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
                     <p>Es gilt das Recht der Bundesrepublik Deutschland.</p>
                     <p>Gerichtsstand für alle Streitigkeiten aus diesem Vertrag ist der Sitz des Auftragnehmers (Berlin), sofern der Auftraggeber Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist.</p>
                     <p>Sollten einzelne Bestimmungen dieser AGB unwirksam sein, bleibt der Vertrag im Übrigen wirksam.</p>
                   </div>
                 </section>
-
               </div>
             </div>
           </Reveal>

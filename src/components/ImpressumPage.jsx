@@ -133,7 +133,7 @@ export default function Impressum() {
                 <section>
                   <h2 className="font-serif text-xl text-slate-900 mb-3">Kontakt</h2>
                   <p>
-                    Telefon: 017655156501<br />
+                    Telefon: +49 176 55156501<br />
                     E-Mail: <a href="mailto:kontakt@lcg-webdesign.de" className="text-blue-600 hover:text-blue-800 transition-colors">kontakt@lcg-webdesign.de</a>
                   </p>
                 </section>
@@ -151,29 +151,7 @@ export default function Impressum() {
                 <section>
                   <h2 className="font-serif text-xl text-slate-900 mb-3">Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
                   <p>
-                    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-                  </p>
-                </section>
-
-                {/* DSA */}
-                <section>
-                  <h2 className="font-serif text-xl text-slate-900 mb-3">Zentrale Kontaktstelle nach dem Digital Services Act - DSA (Verordnung (EU) 2022/265)</h2>
-                  <p className="mb-4">
-                    Unsere zentrale Kontaktstelle für Nutzer und Behörden nach Art. 11, 12 DSA erreichen Sie wie folgt:
-                  </p>
-                  <p className="mb-4">
-                    E-Mail: <a href="mailto:kontakt@lcg-webdesign.de" className="text-blue-600 hover:text-blue-800 transition-colors">kontakt@lcg-webdesign.de</a><br />
-                    Telefon: 017655156501
-                  </p>
-                  <p>
-                    Die für den Kontakt zur Verfügung stehenden Sprachen sind: Deutsch, Englisch.
-                  </p>
-                </section>
-
-                {/* Quelle */}
-                <section className="pt-8 border-t border-slate-100 text-sm text-slate-500">
-                  <p>
-                    Quelle: <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 transition-colors">e-recht24.de</a>
+                    Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
                   </p>
                 </section>
 
