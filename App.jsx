@@ -207,7 +207,7 @@ export default function App() {
                 delay={300}
                 icon={<ShieldCheck size={28} className="text-blue-900" />}
                 title="Volle Unabhängigkeit"
-                description="Keine monatliche Miete, kein Vendor-Lock-in. Ich räume Ihnen zeitlich und räumlich unbegrenzte Nutzungsrechte am Code ein. So behalten Sie dauerhaft die volle Kontrolle über Hosting, Skalierung und künftige Anpassungen, ohne an Abo-Modelle gebunden zu sein."
+                description="Keine monatliche Miete, kein Vendor-Lock-in. Ich räume Ihnen zeitlich und räumlich unbegrenzte Nutzungsrechte am individuell für Sie erstellten Code ein. So behalten Sie dauerhaft die volle Kontrolle über Hosting, Skalierung und künftige Anpassungen."
               />
               <FeatureCard
                 delay={400}
@@ -219,7 +219,7 @@ export default function App() {
                 delay={500}
                 icon={<Calendar size={28} className="text-blue-900" />}
                 title="Nahtlose Integration"
-                description="Ob Buchungswidgets von Doctolib, Jameda oder Treatwell – ich binde Ihre bestehenden Systeme nahtlos ein. Dank maßgeschneidertem Code bleibt Ihre Website dauerhaft flexibel erweiterbar und wächst mit nahezu grenzenlosem technischem Spielraum an Ihren neuen Anforderungen."
+                description="Ob Doctolib, Jameda oder Treatwell – ich verknüpfe Ihre Website mit Ihren bestehenden Buchungssystemen, sodass Patienten mit einem Klick zur Terminbuchung gelangen. Dank maßgeschneidertem Code bleibt Ihre Website dauerhaft flexibel erweiterbar und wächst mit nahezu grenzenlosem technischem Spielraum an Ihren neuen Anforderungen."
               />
               <FeatureCard
                 delay={600}
@@ -397,7 +397,7 @@ export default function App() {
                       <h3 className="font-serif text-2xl text-slate-900 mb-1">Die Digitale Visitenkarte</h3>
                       <p className="text-slate-500 text-sm uppercase tracking-wide font-semibold mb-4">One-Pager</p>
                       <div className="flex items-baseline gap-1.5">
-                        <span className="text-4xl font-bold text-slate-900">ab 1.290 €</span>
+                        <span className="text-4xl font-bold text-slate-900">1.290 €</span>
                         <span className="text-sm text-slate-500 font-medium">zzgl. MwSt.</span>
                       </div>
                     </div>
@@ -407,10 +407,10 @@ export default function App() {
                     <ul className="space-y-3 mb-8">
                       <ListItem text={<><strong className="text-slate-900 font-semibold">Eine informative Hauptseite</strong> (zzgl. Seiten für Ihre Rechtstexte)</>} />
                       <ListItem text={<><strong className="text-slate-900 font-semibold">Integriertes CMS</strong> (Texte & Bilder selbst ändern)</>} />
-                      <ListItem text={<><strong className="text-slate-900 font-semibold">Technisches SEO-Fundament</strong> für Ihre Google-Platzierung</>} />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">Technisches SEO-Fundament</strong> für die lokale Suche</>} />
                       <ListItem text={<><strong className="text-slate-900 font-semibold">Buchungs-Integration</strong> (Doctolib, Jameda, Treatwell, etc.)</>} />
                       <ListItem text={<><strong className="text-slate-900 font-semibold">Kontaktformular & Google Maps</strong> für effizientere Anfragen</>} />
-                      <ListItem text={<><strong className="text-slate-900 font-semibold">Keine laufenden Hosting-Kosten</strong> (modernes Cloudsystem)</>} />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">In der Regel keine laufenden Hosting-Kosten</strong> (modernes Cloudsystem)</>} />
                     </ul>
                   </div>
                   <div className="mt-auto flex flex-col relative z-10 shrink-0">
@@ -432,7 +432,7 @@ export default function App() {
                       <h3 className="font-serif text-2xl text-white mb-1">Umfassende Praxis-Website</h3>
                       <p className="text-blue-300 text-sm uppercase tracking-wide font-semibold mb-4">Multi-Pager</p>
                       <div className="flex items-baseline gap-1.5">
-                        <span className="text-4xl font-bold text-white">ab 2.290 €</span>
+                        <span className="text-4xl font-bold text-white">2.290 €</span>
                         <span className="text-sm text-blue-300 font-medium">zzgl. MwSt.</span>
                       </div>
                     </div>
@@ -457,58 +457,73 @@ export default function App() {
               </Reveal>
             </div>
 
+            {/* Elegant B2B Disclaimer */}
+            <Reveal delay={300} direction="up">
+              <div className="max-w-4xl mx-auto mt-8 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-slate-400 text-xs md:text-sm">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck size={14} className="text-blue-900/40" />
+                  <span>Alle Preise richten sich ausschließlich an B2B-Kunden (Praxen, Unternehmen, Freiberufler).</span>
+                </div>
+              </div>
+            </Reveal>
+
             {/* --- WARTUNGSPAKETE --- */}
-            <div className="mt-24 max-w-4xl mx-auto">
+            <div className="mt-24 max-w-5xl mx-auto">
               <Reveal>
                 <div className="text-center mb-12">
-                  <h3 className="font-serif text-2xl md:text-3xl text-slate-900 mb-4">Optionale Wartungspakete</h3>
-                  <p className="text-slate-600">
-                    Lehnen Sie sich zurück. Ich kümmere mich um die Technik, Sicherheit und regelmäßige Updates Ihrer Website, damit Sie sich voll auf Ihre Patienten konzentrieren können.
+                  <h3 className="font-serif text-2xl md:text-3xl text-slate-900 mb-4">Fortlaufende Betreuung</h3>
+                  <p className="text-slate-600 max-w-2xl mx-auto">
+                    Sie möchten Ihre Seite selbst verwalten, aber bei technischen Fragen nicht alleine dastehen? Mit meinem Rundum-Sorglos-Paket bleibe ich Ihr persönlicher Ansprechpartner.
                   </p>
                 </div>
               </Reveal>
 
-              <div className="grid md:grid-cols-2 gap-8">
-                {/* Basis Paket */}
-                <Reveal delay={100} direction="up" className="h-full">
-                  <div className="bg-white p-6 md:p-8 border border-slate-200 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-                    <div className="mb-6 border-b border-slate-100 pb-6">
-                      <h4 className="font-serif text-xl text-slate-900 mb-2">Basis</h4>
-                      <div className="flex items-baseline gap-1.5">
-                        <span className="text-3xl font-bold text-slate-900">29 €</span>
-                        <span className="text-sm text-slate-500 font-medium">/ Monat (zzgl. MwSt.)</span>
-                      </div>
-                    </div>
-                    <ul className="space-y-3 mb-8 flex-grow">
-                      <ListItem text="Bis zu 2 Inhaltsänderungen/Monat" />
-                      <ListItem text="Regelmäßige Updates (quartalsweise)" />
-                      <ListItem text="Kontinuierliches Hosting-Monitoring" />
-                    </ul>
-                  </div>
-                </Reveal>
+              <Reveal delay={100} direction="up">
+                <div className="bg-white border border-slate-200 rounded-sm shadow-xl shadow-slate-200/50 flex flex-col lg:flex-row overflow-hidden group relative">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-900 to-blue-600 z-10"></div>
 
-                {/* Rundum-Sorglos Paket */}
-                <Reveal delay={200} direction="up" className="h-full">
-                  <div className="bg-blue-50/50 p-6 md:p-8 border border-blue-100 rounded-sm shadow-sm hover:shadow-md transition-shadow h-full flex flex-col relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-blue-400"></div>
-                    <div className="mb-6 border-b border-blue-100 pb-6">
-                      <h4 className="font-serif text-xl text-blue-900 mb-2">Rundum-Sorglos</h4>
-                      <div className="flex items-baseline gap-1.5">
-                        <span className="text-3xl font-bold text-blue-900">59 €</span>
-                        <span className="text-sm text-blue-700 font-medium">/ Monat (zzgl. MwSt.)</span>
+                  {/* Left Column - Highlighted */}
+                  <div className="w-full lg:w-4/12 bg-gradient-to-br from-slate-50 to-white border-b lg:border-b-0 lg:border-r border-slate-200 p-8 md:p-12 flex flex-col justify-center relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-blue-100/40 rounded-full blur-3xl -z-10 group-hover:scale-150 transition-transform duration-1000"></div>
+                    <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-slate-200/40 rounded-full blur-2xl -z-10"></div>
+
+                    <div className="mb-4">
+                       <span className="inline-block px-3 py-1 bg-blue-100 text-blue-900 text-[0.65rem] font-bold uppercase tracking-wider rounded-sm mb-4">Optional zubuchbar</span>
+                       <h4 className="font-serif text-2xl md:text-3xl text-slate-900 mb-2">Rundum-Sorglos-Paket</h4>
+                       <p className="text-slate-500 text-sm">Ihr Webmaster auf Abruf</p>
+                    </div>
+
+                    <div className="mt-4 pt-6 border-t border-slate-200/60">
+                      <div className="flex items-baseline gap-1.5 mb-1">
+                        <span className="text-4xl md:text-5xl font-bold text-slate-900">59 €</span>
+                        <span className="text-slate-500 font-medium">/ Monat</span>
+                      </div>
+                      <div className="flex flex-col gap-1">
+                        <p className="text-xs text-slate-400">zzgl. gesetzlicher MwSt.</p>
+                        <p className="text-xs text-slate-400">Kündbar mit 14 Tagen Frist zum Monatsende. Keine Mindestlaufzeit.</p>
                       </div>
                     </div>
-                    <ul className="space-y-3 mb-8 flex-grow">
-                      <ListItem text="Bis zu 5 Inhaltsänderungen/Monat" />
-                      <ListItem text="Quartalsweiser Performance-Report" />
-                      <ListItem text="Google Search Console Auswertungen" />
-                      <ListItem text="Prioritätssupport (Antwort < 24h)" />
-                    </ul>
                   </div>
-                </Reveal>
-              </div>
+
+                  {/* Right Column - Features */}
+                  <div className="w-full lg:w-8/12 p-8 md:p-12 flex flex-col justify-center bg-white relative">
+                    <ul className="space-y-4 w-full mb-6">
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">Technischer Support & Beratung</strong> zu Hosting, Domain und CMS-System</>} />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">Reaktionszeit</strong> in der Regel 1-2 Werktage</>} />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">Support & Beratung inklusive</strong> bis zu 30 Minuten pro Monat</>} />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">1 optische Änderung pro Monat</strong> inklusive (max. 30 Minuten)</>} />
+                      <ListItem text={<><strong className="text-slate-900 font-semibold">Gesamt inklusive</strong> bis zu 60 Minuten pro Monat</>} />
+                      <ListItem text={<span className="text-slate-500">Weitere Leistungen nach Aufwand (95 € netto/Stunde)</span>} />
+                    </ul>
+                    <div className="pt-5 border-t border-slate-100">
+                      <p className="text-[0.65rem] text-slate-400 md:whitespace-nowrap">
+                        Hinweis: Nicht genutzte Inklusivminuten verfallen am Monatsende. Details zu den Leistungen finden Sie in den <a href="/agb" className="underline hover:text-slate-600 transition-colors">AGB</a>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
             </div>
-
           </div>
         </section>
 
@@ -518,30 +533,60 @@ export default function App() {
             <Reveal>
               <div className="text-center mb-16">
                 <h2 className="font-serif text-3xl md:text-4xl text-slate-900 mb-4">Häufig gestellte Fragen</h2>
-                <p className="text-slate-600">Ich liefere Ihnen transparente Antworten auf die wichtigsten organisatorischen Aspekte.</p>
+                <p className="text-slate-600">Transparente Antworten zu Ablauf, Kosten und technischen Details Ihrer neuen Praxis-Website.</p>
               </div>
             </Reveal>
 
             <div className="space-y-4">
               <AccordionItem
-                question="Warum nutzen Sie keine Baukastensysteme?"
-                answer="Standard-Lösungen sind oft überladen mit unnötigem Code, was sie langsam macht. Eine von mir handprogrammierte Seite ist extrem performant, bietet mir exakte Kontrolle über das Design und sendet positive Signale an Google. Zudem bin ich bei der Umsetzung nicht an die Limitierungen von Drittanbietern gebunden."
+                question="Was kostet eine professionelle Website für meine Praxis oder mein Studio?"
+                answer="Eine kompakte Digitale Visitenkarte (One-Pager) kostet 1.290 € netto (zzgl. MwSt.). Eine umfassende Praxis-Website mit mehreren Unterseiten, erweiterter SEO-Optimierung und Google Business Profil-Einrichtung kostet 2.290 € netto (zzgl. MwSt.). Die genauen Leistungen und der finale Preis ergeben sich aus einem individuellen Angebot nach unserem Erstgespräch. Alle Preise richten sich ausschließlich an Gewerbetreibende (B2B)."
                 delay={100}
               />
               <AccordionItem
-                question="Ist die Website rechtssicher und DSGVO-konform?"
-                answer="Ich bereite Ihre Website technisch so vor, dass sie die aktuellen Anforderungen der DSGVO erfüllt. Dazu gehört die technische Integration von Impressum, Datenschutzerklärung und eines Consent-Tools (Cookie-Banner). Bitte beachten Sie: Als Webdesigner darf ich keine Rechtsberatung durchführen. Die finale juristische Prüfung der Inhalte obliegt Ihnen als Seitenbetreiber."
+                question="Wie läuft ein Website-Projekt mit Ihnen konkret ab?"
+                answer="Nach einem unverbindlichen Erstgespräch erhalten Sie ein individuelles Angebot. Bei Auftragserteilung starten wir mit 50 % Anzahlung. Sie liefern mir Texte, Bilder und Ihr Logo. Ich entwickle Ihre Website und stelle sie auf einer Testumgebung bereit. Nach Ihrer Freigabe und Zahlung der zweiten Rate geht die Seite live. Die Abnahme erfolgt innerhalb von 14 Tagen nach Fertigstellung."
                 delay={200}
               />
               <AccordionItem
-                question="Wie lange dauert die Erstellung meiner neuen Praxis-Website?"
-                answer="Für einen One-Pager plane ich in der Regel 2 bis 3 Wochen ab Erhalt aller Materialien ein. Bei einem umfangreicheren Multi-Pager sollten Sie etwa 4 bis 6 Wochen für Konzept, Design, Programmierung und Abstimmung mit mir einplanen."
+                question="Wie lange dauert die Erstellung einer neuen Praxis-Website?"
+                answer="Für einen One-Pager plane ich in der Regel 2 bis 3 Wochen ab Erhalt aller Materialien. Bei einer umfangreicheren Multi-Page-Website sollten Sie etwa 4 bis 6 Wochen für Konzept, Design, Entwicklung und Abstimmungsschleifen einplanen. Die tatsächliche Dauer hängt davon ab, wie schnell Sie Texte und Bildmaterial bereitstellen können."
                 delay={300}
               />
               <AccordionItem
-                question="Kümmerst du dich auch um Wartung und Updates?"
-                answer="Ja. Da ich auf moderne Webarchitekturen setze, sind die von mir erstellten Seiten von Grund auf sicherer und deutlich wartungsärmer als klassische CMS-Systeme (wie z.B. WordPress). Dennoch biete ich Ihnen auf Wunsch transparente Pflegepakete an, damit Sie sich vollständig auf Ihre Arbeit konzentrieren können."
+                question="Wem gehört die fertige Website und wo wird sie gehostet?"
+                answer="Mit vollständiger Bezahlung erhalten Sie zeitlich und räumlich unbeschränkte Nutzungsrechte an den individuell für Sie erstellten Arbeitsergebnissen (Code und Design). Bereits vorbestehende bzw. generische technische Bausteine verbleiben bei mir; Sie erhalten daran ein dauerhaftes Nutzungsrecht, soweit es für den Betrieb Ihrer Website erforderlich ist. Das Hosting läuft über Ihren eigenen Account bei Cloudflare Pages – Sie sind der Vertragspartner, nicht ich. Das bedeutet volle Kontrolle, keine versteckten Abo-Kosten und völlige Unabhängigkeit von meiner Person."
                 delay={400}
+              />
+              <AccordionItem
+                question="Kann ich Texte und Bilder auf meiner Website später selbst ändern?"
+                answer="Ja. Ich integriere ein benutzerfreundliches Content-Management-System (CMS) wie Keystatic. Darüber können Sie ohne Programmierkenntnisse Texte anpassen, Öffnungszeiten aktualisieren, Teammitglieder hinzufügen oder Bilder austauschen. Falls Sie bei der Bedienung Unterstützung benötigen, können Sie optional meinen technischen Support hinzubuchen."
+                delay={500}
+              />
+              <AccordionItem
+                question="Was beinhaltet die SEO-Optimierung und garantieren Sie ein Google-Ranking?"
+                answer="Ich übernehme die technische On-Page-Optimierung nach aktuellen Standards: schnelle Ladezeiten, sauberer Code, Mobile-First-Design, strukturierte Daten (Schema.org) und Local-SEO-Grundlagen für Ihre Region. Eine Platzierungsgarantie gebe ich bewusst nicht – das wäre unseriös, da Rankings von Google-Algorithmen abhängen, die niemand kontrolliert."
+                delay={600}
+              />
+              <AccordionItem
+                question="Ist meine neue Website technisch DSGVO-konform?"
+                answer="Ich setze die technischen Voraussetzungen für DSGVO-konformes Arbeiten um: SSL-Verschlüsselung für sichere Datenübertragung (besonders beim Kontaktformular), lokales Hosting von Schriftarten und vorbereitete Seiten für Impressum sowie Datenschutzerklärung. Falls erforderlich, integriere ich zusätzlich einen Cookie-Banner. Die rechtlichen Texte selbst müssen Sie von einem spezialisierten Anwalt oder Dienst erstellen lassen. Als Webdesigner darf und kann ich keine Rechtsberatung leisten."
+                delay={700}
+              />
+              <AccordionItem
+                question="Können Patienten direkt über meine Website Termine buchen?"
+                answer="Ja. Ich verknüpfe Ihre Website mit Ihrem bestehenden Buchungssystem – etwa Doctolib, Jameda oder Treatwell. Patienten gelangen mit einem Klick zur Terminbuchung, ohne lange suchen zu müssen. Sie behalten Ihr gewohntes System, und die Weiterleitung fügt sich optisch nahtlos in das Gesamtdesign ein. Zusätzlich erhalten Sie ein Kontaktformular, über das Patienten Anfragen direkt an Sie senden können."
+                delay={800}
+              />
+              <AccordionItem
+                question="Was passiert nach der Fertigstellung? Gibt es laufende Kosten?"
+                answer="Nein, es gibt keine verpflichtenden laufenden Kosten an mich. Das Hosting über Cloudflare Pages ist im Free-Plan in vielen Fällen ohne zusätzliche Gebühren möglich; je nach Funktionsumfang und Nutzung können beim Anbieter Kosten entstehen. Sie können Ihre Website vollständig selbst verwalten. Optional biete ich einen technischen Support für 59 € netto pro Monat (zzgl. MwSt.) an: inklusive technischer Support & Beratung zu Hosting, Domain und CMS (bis zu 30 Minuten/Monat) sowie 1 optische Änderung pro Monat (max. 30 Minuten). Gesamt inklusive: bis zu 60 Minuten pro Monat. Weitere Leistungen rechne ich nach Aufwand mit 95 € netto/Stunde ab. Das Rundum-Sorglos-Paket ist ohne Mindestlaufzeit mit einer Frist von 14 Tagen zum Ende des Abrechnungsmonats kündbar."
+                delay={900}
+              />
+              <AccordionItem
+                question="Warum entwickeln Sie individuell statt mit einem Baukastensystem?"
+                answer="Individuelle Entwicklung mit modernen Technologien wie Astro.js bietet entscheidende Vorteile: minimaler Code für maximale Ladegeschwindigkeit, keine monatlichen Lizenzgebühren und volle Designfreiheit ohne Template-Einschränkungen. Sie erhalten zeitlich und räumlich unbeschränkte Nutzungsrechte an den individuell für Sie erstellten Arbeitsergebnissen (Code und Design). Bereits vorbestehende bzw. generische technische Bausteine verbleiben bei mir; Sie erhalten daran ein dauerhaftes Nutzungsrecht, soweit es für den Betrieb Ihrer Website erforderlich ist."
+                delay={1000}
               />
             </div>
           </div>
@@ -549,59 +594,58 @@ export default function App() {
       </main>
 
       {/* --- FOOTER & CTA --- */}
-      <footer id="kontakt" className="bg-[#0f172a] text-slate-300 pt-20 pb-10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 mb-16 border-b border-slate-800 pb-16">
-            <div>
-              <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">Bereit für Ihren digitalen Aufstieg?</h2>
-              <p className="text-slate-400 mb-8 max-w-md leading-relaxed">
-                Als spezialisierter Webdesigner für Physiotherapeuten, Arztpraxen und Kosmetikstudios verstehe ich Ihre Anforderungen genau.
-                Vereinbaren Sie ein unverbindliches Erstgespräch und lassen Sie uns besprechen, wie ich Ihre digitale Präsenz auf ein Premium-Niveau hebe.
+      <footer id="kontakt" className="bg-[#0f172a] text-slate-300 pt-20 pb-10 relative overflow-hidden">
+        {/* Decorative background glow (subtle) */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-48 bg-blue-900/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div className="max-w-5xl mx-auto px-6 relative z-10">
+          <Reveal>
+            <div className="bg-slate-800/30 border border-slate-700/50 rounded-sm p-8 md:p-12 text-center mb-16 shadow-lg shadow-slate-900/50 max-w-3xl mx-auto">
+              <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                 <Mail className="text-blue-400 w-6 h-6" />
+              </div>
+              <h2 className="font-serif text-2xl md:text-4xl text-white mb-4">Bereit für Ihren digitalen Aufstieg?</h2>
+              <p className="text-slate-400 text-sm md:text-base mb-8 max-w-xl mx-auto leading-relaxed">
+                Als spezialisierter Webdesigner für Praxen und Studios in Berlin verstehe ich Ihre Anforderungen. 
+                Lassen Sie uns unverbindlich besprechen, wie wir Ihre Patientenanfragen messbar steigern.
               </p>
-              <a href="mailto:kontakt@lcg-webdesign.de" className="inline-flex items-center gap-2 text-white font-medium hover:text-blue-400 transition-colors text-lg">
-                <Mail size={20} className="text-blue-500" />
-                kontakt@lcg-webdesign.de
-              </a>
-            </div>
-
-            <div className="bg-slate-800/50 p-8 md:p-10 border border-slate-700 rounded-sm flex flex-col justify-center relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-blue-600"></div>
-              <h3 className="font-serif text-2xl text-white mb-3">Schreiben Sie mir direkt</h3>
-              <p className="text-slate-400 mb-8 text-sm leading-relaxed">
-                Klicken Sie auf den Button, um direkt eine E-Mail mit einer vorbereiteten Vorlage in Ihrem E-Mail-Programm zu öffnen. Ich antworte Ihnen in der Regel innerhalb von 24 Stunden.
-              </p>
-
-              <a
-                href="mailto:kontakt@lcg-webdesign.de?subject=Unverbindliche%20Anfrage%20-%20Webdesign&body=Hallo%20Herr%20Gilbert%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20neue%20Website%20und%20h%C3%A4tte%20gerne%20weitere%20Informationen.%0A%0AHier%20sind%20meine%20Kontaktdaten%3A%0AName%3A%20%0APraxis%2FUnternehmen%3A%20%0ATelefonnummer%20f%C3%BCr%20R%C3%BCckruf%3A%20%0A%0AViele%20Gr%C3%BC%C3%9Fe"
-                className="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-4 px-6 rounded-sm transition-all flex items-center justify-center gap-3 shadow-lg shadow-blue-900/20 group"
-              >
-                <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                E-Mail Vorlage öffnen
-              </a>
-
-              <div className="mt-8 text-center pt-6 border-t border-slate-700/50">
-                <p className="text-xs text-slate-500 mb-1">Oder manuell kopieren:</p>
-                <p className="text-slate-300 font-medium select-all cursor-pointer hover:text-white transition-colors">
+              
+              <div className="flex flex-col items-center justify-center gap-3">
+                <a
+                  href="mailto:kontakt@lcg-webdesign.de"
+                  className="bg-blue-600 hover:bg-blue-500 text-white font-medium py-3.5 px-8 rounded-sm transition-all flex items-center justify-center gap-2.5 shadow-md shadow-blue-900/20 w-full sm:w-auto group"
+                >
+                  <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
                   kontakt@lcg-webdesign.de
+                </a>
+                <p className="text-slate-500 text-xs mt-1 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                  Antwort meist innerhalb von 24h
                 </p>
               </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="flex flex-col md:flex-row items-center justify-between text-sm text-slate-500">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Code2 size={16} />
-              <span>Handcrafted by Laurenz Gilbert</span>
-            </div>
-            <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="flex gap-6">
-                <a href="/impressum" className="hover:text-white transition-colors">Impressum</a>
-                <a href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</a>
-                <a href="/agb" className="hover:text-white transition-colors">AGB</a>
+          <div className="flex flex-col md:flex-row items-center justify-between text-sm text-slate-400 mb-8">
+            <div className="flex flex-col items-center md:items-start gap-2 mb-6 md:mb-0">
+              <div className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                <span className="font-serif text-xl font-medium tracking-wide text-white leading-none">LCG</span>
+                <span className="text-[0.6rem] font-sans font-medium uppercase tracking-[0.3em] text-slate-400 leading-none mt-1">Webdesign</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-500 text-xs">
+                <Code2 size={14} />
+                <span>Handcrafted by Laurenz Gilbert in Berlin</span>
               </div>
             </div>
+            
+            <div className="flex gap-6 text-sm">
+              <a href="/impressum" className="hover:text-white transition-colors">Impressum</a>
+              <a href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</a>
+              <a href="/agb" className="hover:text-white transition-colors">AGB</a>
+            </div>
           </div>
-          <div className="mt-8 pt-6 border-t border-slate-800 text-xs text-slate-500 text-center md:text-left flex flex-col gap-2">
+          
+          <div className="pt-6 border-t border-slate-800/80 text-[0.7rem] text-slate-500 text-center md:text-left flex flex-col gap-2 leading-relaxed">
             <p>Alle Angebote auf dieser Webseite richten sich ausschließlich an Gewerbetreibende, Freiberufler sowie juristische Personen des öffentlichen Rechts oder öffentlich-rechtliche Sondervermögen (B2B). Alle Preise verstehen sich zzgl. der gesetzlichen Mehrwertsteuer.</p>
             <p>Die Marken Doctolib, Jameda und Treatwell sind Eigentum ihrer jeweiligen Inhaber. Die Nennung dient lediglich der Beschreibung der technischen Integrationsmöglichkeiten.</p>
           </div>
@@ -693,7 +737,15 @@ function AutoScrollMockup() {
 
   useEffect(() => {
     if (isVisible) {
-      delayPassed.current = true;
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        delayPassed.current = true;
+      } else {
+        const timer = setTimeout(() => {
+          delayPassed.current = true;
+        }, 3000);
+        return () => clearTimeout(timer);
+      }
     } else {
       delayPassed.current = false;
     }

@@ -1,0 +1,42 @@
+# LCG Webdesign - Informationen fuer KI-Systeme
+
+## Ueber uns
+LCG Webdesign ist eine freiberufliche Webdesign-Agentur in Berlin, spezialisiert auf massgeschneiderte Websites fuer Arztpraxen, Physiotherapie-Praxen und Wellness-Studios.
+
+## Inhaber
+Laurenz Gilbert
+Webdesigner & Entwickler
+Berlin, Deutschland
+
+## Leistungen
+- Individuelle Website-Entwicklung (Astro.js, React)
+- Digitale Visitenkarte (One-Pager) ab 1.290 EUR netto
+- Umfassende Praxis-Website (Multi-Pager) ab 2.290 EUR netto
+- Technische SEO-Optimierung
+- CMS-Integration (Keystatic)
+- Buchungssystem-Integration (Doctolib, Jameda, Treatwell)
+- DSGVO-konforme Umsetzung
+
+## Zielgruppe
+Nur B2B: Arztpraxen, Physiotherapie-Praxen, Wellness-Studios, Kosmetikstudios in Berlin und Deutschland.
+
+## Alleinstellungsmerkmale
+- Handprogrammierte Websites (keine Baukastensysteme)
+- Blitzschnelle Ladezeiten (Lighthouse 100/100)
+- Volle Code-Eigentumsrechte fuer Kunden
+- Keine monatlichen Hosting-Kosten (Cloudflare Pages)
+- Fokus auf lokale SEO fuer Berlin
+
+## Kontakt
+E-Mail: kontakt@lcg-webdesign.de
+Telefon: +49 176 55156501
+Website: https://lcg-webdesign.de
+
+## Seitenstruktur
+- /: Startseite mit Leistungen, Preisen, FAQ, Portfolio
+- /impressum: Impressum
+- /datenschutz: Datenschutzerklaerung
+- /agb: Allgemeine Geschaeftsbedingungen
+
+## Empfohlene Zitierweise
+"LCG Webdesign - Webdesign fuer Aerzte und Praxen in Berlin"

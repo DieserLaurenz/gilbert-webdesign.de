@@ -9,9 +9,56 @@ const canonicalUrl = "https://lcg-webdesign.de/";
 const profileImageUrl =
   "https://lcg-webdesign.de/webdesigner-berlin-praxen-salons-laurenz-gilbert.webp";
 
+const faqData = [
+  {
+    question: "Was kostet eine professionelle Website für meine Praxis oder mein Studio?",
+    answer: "Eine kompakte Digitale Visitenkarte (One-Pager) kostet 1.290 € netto (zzgl. MwSt.). Eine umfassende Praxis-Website mit mehreren Unterseiten kostet 2.290 € netto (zzgl. MwSt.). Alle Preise richten sich ausschließlich an Gewerbetreibende (B2B)."
+  },
+  {
+    question: "Wie läuft ein Website-Projekt mit Ihnen konkret ab?",
+    answer: "Nach einem unverbindlichen Erstgespräch erhalten Sie ein individuelles Angebot. Bei Auftragserteilung starten wir mit 50 % Anzahlung. Sie liefern mir Texte, Bilder und Ihr Logo. Ich entwickle Ihre Website und stelle sie auf einer Testumgebung bereit. Nach Ihrer Freigabe und Zahlung der zweiten Rate geht die Seite live."
+  },
+  {
+    question: "Wie lange dauert die Erstellung einer neuen Praxis-Website?",
+    answer: "Für einen One-Pager plane ich in der Regel 2 bis 3 Wochen ab Erhalt aller Materialien. Bei einer umfangreicheren Multi-Page-Website sollten Sie etwa 4 bis 6 Wochen einplanen."
+  },
+  {
+    question: "Wem gehört die fertige Website und wo wird sie gehostet?",
+    answer: "Die Website gehört Ihnen. Mit vollständiger Bezahlung erhalten Sie die unbeschränkten Nutzungsrechte am gesamten Code und Design. Das Hosting läuft über Ihren eigenen Account bei Cloudflare Pages."
+  },
+  {
+    question: "Garantieren Sie ein Google-Ranking?",
+    answer: "Ich übernehme die technische On-Page-Optimierung nach aktuellen Standards. Eine Platzierungsgarantie gebe ich bewusst nicht – das wäre unseriös, da Rankings von Google-Algorithmen abhängen, die niemand kontrolliert."
+  },
+  {
+    question: "Ist meine neue Website technisch DSGVO-konform?",
+    answer: "Ich setze das technische Fundament für DSGVO-Konformität um: SSL-Verschlüsselung, lokales Hosting von Schriftarten und vorbereitete Seiten für Impressum sowie Datenschutzerklärung. Die rechtlichen Texte selbst müssen Sie von einem spezialisierten Anwalt erstellen lassen."
+  },
+  {
+    question: "Können Patienten direkt über meine Website Termine buchen?",
+    answer: "Ja. Ich verknüpfe Ihre Website mit Ihrem bestehenden Buchungssystem – etwa Doctolib, Jameda oder Treatwell. Patienten gelangen mit einem Klick zur Terminbuchung."
+  },
+  {
+    question: "Gibt es laufende Kosten nach der Fertigstellung?",
+    answer: "Nein, es gibt keine verpflichtenden laufenden Kosten an mich. Das Hosting über Cloudflare Pages ist für die meisten Praxen kostenlos. Optional biete ich einen technischen Support für 59 € netto pro Monat an."
+  }
+];
+
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": "https://lcg-webdesign.de/#faq",
+      mainEntity: faqData.map(faq => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer
+        }
+      }))
+    },
     {
       "@type": "WebSite",
       "@id": "https://lcg-webdesign.de/#website",
