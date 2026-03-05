@@ -135,7 +135,7 @@ export default function Impressum() {
                   <h2 className="font-serif text-xl text-slate-900 mb-3">Kontakt</h2>
                   <p>
                     Telefon: +49 176 55156501<br />
-                    E-Mail: <a href="mailto:kontakt@lcg-webdesign.de" className="text-blue-600 hover:text-blue-800 transition-colors">kontakt@lcg-webdesign.de</a>
+                    E-Mail: <a href="mailto:kontakt@gilbert-webdesign.de" className="text-blue-600 hover:text-blue-800 transition-colors">kontakt@gilbert-webdesign.de</a>
                   </p>
                 </section>
 

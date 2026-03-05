@@ -4,6 +4,6 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: "https://lcg-webdesign.de",
+  site: "https://gilbert-webdesign.de",
   integrations: [react(), tailwind(), sitemap()],
 });

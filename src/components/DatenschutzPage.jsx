@@ -184,7 +184,7 @@ export default function Datenschutz() {
                         Argentinische Allee 93<br />
                         14163 Berlin<br />
                         Telefon: +49 176 55156501<br />
-                        E-Mail: <a href="mailto:kontakt@lcg-webdesign.de" className="text-blue-600 hover:text-blue-800 transition-colors">kontakt@lcg-webdesign.de</a>
+                        E-Mail: <a href="mailto:kontakt@gilbert-webdesign.de" className="text-blue-600 hover:text-blue-800 transition-colors">kontakt@gilbert-webdesign.de</a>
                       </p>
                       <p>Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.</p>
                     </div>

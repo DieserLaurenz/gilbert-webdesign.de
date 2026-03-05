@@ -612,11 +612,11 @@ export default function App() {
               
               <div className="flex flex-col items-center justify-center gap-3">
                 <a
-                  href="mailto:kontakt@lcg-webdesign.de"
+                  href="mailto:kontakt@gilbert-webdesign.de"
                   className="bg-blue-600 hover:bg-blue-500 text-white font-medium py-3.5 px-8 rounded-sm transition-all flex items-center justify-center gap-2.5 shadow-md shadow-blue-900/20 w-full sm:w-auto group"
                 >
                   <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  kontakt@lcg-webdesign.de
+                  kontakt@gilbert-webdesign.de
                 </a>
                 <p className="text-slate-500 text-xs mt-1 flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
