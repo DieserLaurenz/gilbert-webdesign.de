@@ -102,7 +102,7 @@ export default function App() {
           >
             <div className="flex flex-col items-start justify-center">
               <span className="font-serif text-[1.65rem] font-medium tracking-wide text-slate-900 leading-none group-hover:text-blue-900 transition-colors">
-                LCG
+                Gilbert
               </span>
               <span className="text-[0.65rem] font-sans font-medium uppercase tracking-[0.3em] text-slate-500 leading-none mt-1.5 ml-[0.1rem]">
                 Webdesign
@@ -629,7 +629,7 @@ export default function App() {
           <div className="flex flex-col md:flex-row items-center justify-between text-sm text-slate-400 mb-8">
             <div className="flex flex-col items-center md:items-start gap-2 mb-6 md:mb-0">
               <div className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-                <span className="font-serif text-xl font-medium tracking-wide text-white leading-none">LCG</span>
+                <span className="font-serif text-xl font-medium tracking-wide text-white leading-none">Gilbert</span>
                 <span className="text-[0.6rem] font-sans font-medium uppercase tracking-[0.3em] text-slate-400 leading-none mt-1">Webdesign</span>
               </div>
               <div className="flex items-center gap-2 text-slate-500 text-xs">

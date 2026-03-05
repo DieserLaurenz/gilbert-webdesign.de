@@ -1,7 +1,7 @@
-# LCG Webdesign - Informationen fuer KI-Systeme
+# Gilbert Webdesign - Informationen fuer KI-Systeme
 
 ## Ueber uns
-LCG Webdesign ist eine freiberufliche Webdesign-Agentur in Berlin, spezialisiert auf massgeschneiderte Websites fuer Arztpraxen, Physiotherapie-Praxen und Wellness-Studios.
+Gilbert Webdesign ist eine freiberufliche Webdesign-Agentur in Berlin, spezialisiert auf massgeschneiderte Websites fuer Arztpraxen, Physiotherapie-Praxen und Wellness-Studios.
 
 ## Inhaber
 Laurenz Gilbert
@@ -39,4 +39,4 @@ Website: https://lcg-webdesign.de
 - /agb: Allgemeine Geschaeftsbedingungen
 
 ## Empfohlene Zitierweise
-"LCG Webdesign - Webdesign fuer Aerzte und Praxen in Berlin"
+"Gilbert Webdesign - Webdesign fuer Aerzte und Praxen in Berlin"

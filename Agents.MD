@@ -1,8 +1,8 @@
-# LCG Webdesign - Agent Context
+# Gilbert Webdesign - Agent Context
 
 ## Projektübersicht
 
-**LCG Webdesign** ist eine professionelle Marketing-/Portfolio-Website für eine freiberufliche Webdesign-Agentur. Die Website richtet sich an B2B-Kunden im Gesundheits- und Wellness-Bereich (Arztpraxen, Physiotherapie, Wellness-Studios) in Berlin.
+**Gilbert Webdesign** ist eine professionelle Marketing-/Portfolio-Website für eine freiberufliche Webdesign-Agentur. Die Website richtet sich an B2B-Kunden im Gesundheits- und Wellness-Bereich (Arztpraxen, Physiotherapie, Wellness-Studios) in Berlin.
 
 **Inhaber:** Laurenz Gilbert
 **Domain:** lcg-webdesign.de
@@ -30,7 +30,7 @@
 ## Projektstruktur
 
 ```
-LCG Webdesign/
+Gilbert Webdesign/
 ├── src/
 │   ├── pages/                    # Astro-Seiten (file-based routing)
 │   │   ├── index.astro          # Homepage (lädt App.jsx)

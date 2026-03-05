@@ -55,7 +55,7 @@ export default function Impressum() {
             {/* Seriöses, minimalistisches Typografie-Logo */}
             <div className="flex flex-col items-start justify-center">
               <span className="font-serif text-[1.65rem] font-medium tracking-wide text-slate-900 leading-none group-hover:text-blue-900 transition-colors">
-                LCG
+                Gilbert
               </span>
               <span className="text-[0.65rem] font-sans font-medium uppercase tracking-[0.3em] text-slate-500 leading-none mt-1.5 ml-[0.1rem]">
                 Webdesign
@@ -168,7 +168,7 @@ export default function Impressum() {
           <div className="flex flex-col md:flex-row items-center justify-between text-sm text-slate-500">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
               <Code2 size={16} />
-              <span>Handcrafted by LCG Webdesign</span>
+              <span>Handcrafted by Gilbert Webdesign</span>
             </div>
             <div className="flex gap-6">
               <a href="/impressum" className="text-white transition-colors">Impressum</a>
