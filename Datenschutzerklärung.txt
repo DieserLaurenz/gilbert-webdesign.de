@@ -1,4 +1,4 @@
-﻿Datenschutzerklärung
+Datenschutzerklärung
 
 1. Datenschutz auf einen Blick
 
@@ -128,9 +128,9 @@ Diese Website setzt keine Analyse- oder Marketing-Cookies ein. Technisch erforde
 
 Im Kontaktformular können Sie optional die Funktion "Entwurf lokal speichern" aktivieren. Nur dann werden Ihre Formulareingaben lokal in Ihrem Browser (Local Storage) zwischengespeichert, damit ein Entwurf beim erneuten Besuch wiederhergestellt werden kann. Zusätzlich wird Ihre Auswahl zur Aktivierung bzw. Deaktivierung dieser Funktion lokal gespeichert. Rechtsgrundlage hierfür ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO i. V. m. § 25 Abs. 1 TDDDG). Sie können diese Einwilligung jederzeit widerrufen, indem Sie die Funktion deaktivieren; vorhandene lokale Entwürfe werden dann gelöscht. Die Daten bleiben ausschließlich auf Ihrem Endgerät und werden nicht allein durch diese Funktion an Dritte übermittelt.
 
-Schriftarten (lokales Hosting)
+Schriftarten (Systemschriftarten)
 
-Die auf dieser Website verwendeten Schriftarten werden lokal auf meinem Server gehostet. Dadurch wird beim Aufruf der Website keine Verbindung zu externen Schriftarten-Anbietern (z. B. Google Fonts) hergestellt.
+Diese Website verwendet Systemschriftarten Ihres Endgeräts. Es werden keine externen Schriftarten-Dienste (z. B. Google Fonts) geladen.
 
 Server-Log-Dateien
 
@@ -187,5 +187,3 @@ Keystatic
 Zur Verwaltung der Inhalte dieser Website verwende ich das Open-Source-CMS Keystatic. Keystatic läuft lokal innerhalb meiner Entwicklungsumgebung bzw. als Teil des statischen Build-Prozesses meiner Website. Es werden durch die Nutzung von Keystatic keine zusätzlichen personenbezogenen Daten von Website-Besuchern an Dritte übertragen oder auf externen CMS-Servern gespeichert. Die Speicherung der Inhalte erfolgt direkt in meinem Code-Repository.
 
 (Quelle für Basistexte: https://www.e-recht24.de)
-
-

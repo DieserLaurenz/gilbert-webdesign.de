@@ -264,8 +264,8 @@ export default function Datenschutz() {
                     </div>
 
                     <div>
-                      <h3 className="font-serif text-xl text-slate-900 mb-3">Schriftarten (lokales Hosting)</h3>
-                      <p>Die auf dieser Website verwendeten Schriftarten werden lokal auf meinem Server gehostet. Dadurch wird beim Aufruf der Website keine Verbindung zu externen Schriftarten-Anbietern (z. B. Google Fonts) hergestellt.</p>
+                      <h3 className="font-serif text-xl text-slate-900 mb-3">Schriftarten (Systemschriftarten)</h3>
+                      <p>Diese Website verwendet Systemschriftarten Ihres Endgeräts. Es werden keine externen Schriftarten-Dienste (z. B. Google Fonts) geladen.</p>
                     </div>
 
                     <div>

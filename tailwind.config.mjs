@@ -2,11 +2,11 @@
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}", "./App.jsx"],
   theme: {
-    extend: {
-      fontFamily: {
-        serif: ['"Playfair Display"', 'ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
-      },
+    fontFamily: {
+      sans: ['"Segoe UI"', "Tahoma", "Geneva", "Verdana", "sans-serif"],
+      serif: ["Georgia", "serif"],
     },
+    extend: {},
   },
   plugins: [],
 };
