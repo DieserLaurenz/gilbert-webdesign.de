@@ -1,13 +1,6 @@
-export async function onRequestPost(context) {
-  const { request, env } = context;
+export const prerender = false;
 
-  // CORS Headers
-  const corsHeaders = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
-  };
-
+export async function POST({ request }) {
   try {
     const data = await request.json();
 
@@ -15,7 +8,7 @@ export async function onRequestPost(context) {
     if (!data.name || !data.email || !data.anliegen) {
       return new Response(
         JSON.stringify({ success: false, message: 'Bitte füllen Sie alle Pflichtfelder aus.' }),
-        { status: 400, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
@@ -62,7 +55,7 @@ export async function onRequestPost(context) {
     const resendResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${env.RESEND_API_KEY}`,
+        'Authorization': `Bearer ${import.meta.env.RESEND_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -83,25 +76,14 @@ export async function onRequestPost(context) {
 
     return new Response(
       JSON.stringify({ success: true, message: 'Nachricht erfolgreich gesendet!' }),
-      { status: 200, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+      { status: 200, headers: { 'Content-Type': 'application/json' } }
     );
 
   } catch (error) {
     console.error('Contact form error:', error);
     return new Response(
       JSON.stringify({ success: false, message: 'Es gab ein Problem beim Senden. Bitte versuchen Sie es später erneut.' }),
-      { status: 500, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+      { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
   }
-}
-
-// Handle CORS preflight
-export async function onRequestOptions() {
-  return new Response(null, {
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    },
-  });
 }
