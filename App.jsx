@@ -69,6 +69,105 @@ const Reveal = ({ children, delay = 0, className = "", direction = "up" }) => {
 
 export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const FORM_STORAGE_KEY = 'gilbertContactForm';
+  const FORM_STORAGE_OPT_IN_KEY = 'gilbertContactFormAutosaveOptIn';
+
+  // Kontaktformular State
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    telefon: '',
+    rueckrufzeit: '',
+    interessiert_an: '',
+    website: '',
+    tools: '',
+    anliegen: ''
+  });
+  const [saveFormOnDevice, setSaveFormOnDevice] = useState(false);
+  const [formStatus, setFormStatus] = useState('idle'); // idle, submitting, success, error
+  // Einwilligung und ggf. gespeicherte Formulardaten laden
+  useEffect(() => {
+    const savedPreference = localStorage.getItem(FORM_STORAGE_OPT_IN_KEY);
+    const hasOptedIn = savedPreference === 'true';
+    setSaveFormOnDevice(hasOptedIn);
+
+    if (!hasOptedIn) {
+      localStorage.removeItem(FORM_STORAGE_KEY);
+      return;
+    }
+
+    const savedData = localStorage.getItem(FORM_STORAGE_KEY);
+    if (savedData) {
+      try {
+        setFormData(JSON.parse(savedData));
+      } catch (e) {
+        console.error('Fehler beim Laden der Formulardaten', e);
+      }
+    }
+  }, []);
+  // Einwilligung für lokale Zwischenspeicherung merken
+  useEffect(() => {
+    localStorage.setItem(FORM_STORAGE_OPT_IN_KEY, saveFormOnDevice ? 'true' : 'false');
+    if (!saveFormOnDevice) {
+      localStorage.removeItem(FORM_STORAGE_KEY);
+    }
+  }, [saveFormOnDevice]);
+
+  // Formulardaten nur nach aktivem Opt-in speichern
+  useEffect(() => {
+    if (!saveFormOnDevice) return;
+    localStorage.setItem(FORM_STORAGE_KEY, JSON.stringify(formData));
+  }, [formData, saveFormOnDevice]);
+  const [formError, setFormError] = useState('');
+
+  const handleFormChange = (e) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSavePreferenceChange = (e) => {
+    setSaveFormOnDevice(e.target.checked);
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+    setFormError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          telefon: formData.telefon,
+          rueckrufzeit: formData.rueckrufzeit,
+          interessiert_an: formData.interessiert_an,
+          website: formData.website,
+          tools: formData.tools,
+          anliegen: formData.anliegen,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setFormStatus('success');
+        setFormData({ name: '', email: '', telefon: '', rueckrufzeit: '', interessiert_an: '', website: '', tools: '', anliegen: '' });
+        localStorage.removeItem(FORM_STORAGE_KEY);
+      } else {
+        throw new Error(result.message || 'Fehler beim Senden');
+      }
+    } catch (error) {
+      setFormStatus('error');
+      setFormError('Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail.');
+    }
+  };
 
   const scrollTo = (id) => {
     setIsMobileMenuOpen(false);
@@ -602,27 +701,234 @@ export default function App() {
 
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <Reveal>
-            <div className="bg-slate-800/30 border border-slate-700/50 rounded-sm p-8 md:p-12 text-center mb-16 shadow-lg shadow-slate-900/50 max-w-3xl mx-auto">
-              <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-5">
-                 <Mail className="text-blue-400 w-6 h-6" />
+            <div className="bg-slate-800/30 border border-slate-700/50 rounded-sm p-8 md:p-12 mb-16 shadow-lg shadow-slate-900/50 max-w-3xl mx-auto">
+              <div className="text-center mb-8">
+                <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                   <Mail className="text-blue-400 w-6 h-6" />
+                </div>
+                <h2 className="font-serif text-2xl md:text-4xl text-white mb-4">Bereit für Ihren digitalen Aufstieg?</h2>
+                <p className="text-slate-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+                  Lassen Sie uns unverbindlich besprechen, wie wir Ihre Patientenanfragen messbar steigern.
+                </p>
               </div>
-              <h2 className="font-serif text-2xl md:text-4xl text-white mb-4">Bereit für Ihren digitalen Aufstieg?</h2>
-              <p className="text-slate-400 text-sm md:text-base mb-8 max-w-xl mx-auto leading-relaxed">
-                Als spezialisierter Webdesigner für Praxen und Studios in Berlin verstehe ich Ihre Anforderungen. 
-                Lassen Sie uns unverbindlich besprechen, wie wir Ihre Patientenanfragen messbar steigern.
-              </p>
-              
-              <div className="flex flex-col items-center justify-center gap-3">
-                <a
-                  href="mailto:kontakt@gilbert-webdesign.de"
-                  className="bg-blue-600 hover:bg-blue-500 text-white font-medium py-3.5 px-8 rounded-sm transition-all flex items-center justify-center gap-2.5 shadow-md shadow-blue-900/20 w-full sm:w-auto group"
-                >
-                  <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                  kontakt@gilbert-webdesign.de
-                </a>
-                <p className="text-slate-500 text-xs mt-1 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                  Antwort meist innerhalb von 24h
+
+              {formStatus === 'success' ? (
+                <div className="bg-green-500/10 border border-green-500/30 rounded-sm p-6 mb-8 text-center">
+                  <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="text-green-400 w-6 h-6" />
+                  </div>
+                  <h3 className="text-white font-medium text-lg mb-2">Vielen Dank für Ihre Anfrage!</h3>
+                  <p className="text-slate-400 text-sm">
+                    Ich melde mich innerhalb von 24 Stunden (werktags) bei Ihnen.
+                  </p>
+                  <button
+                    onClick={() => setFormStatus('idle')}
+                    className="mt-4 text-blue-400 hover:text-blue-300 text-sm underline transition-colors"
+                  >
+                    Weitere Nachricht senden
+                  </button>
+                </div>
+              ) : (
+                <form className="space-y-4 mb-8" onSubmit={handleFormSubmit}>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between bg-slate-900/40 border border-slate-700/50 p-4 rounded-sm mb-2 gap-4">
+                    <div className="text-left">
+                      <span className="text-slate-200 text-sm font-medium block">Eingaben zwischenspeichern</span>
+                      <span className="text-slate-400 text-xs mt-0.5 block">Speichert Ihren Fortschritt lokal auf diesem Gerät.</span>
+                    </div>
+                    <label className="relative inline-flex items-center cursor-pointer shrink-0">
+                      <input
+                        type="checkbox"
+                        className="sr-only peer"
+                        checked={saveFormOnDevice}
+                        onChange={handleSavePreferenceChange}
+                        disabled={formStatus === 'submitting'}
+                      />
+                      <div className="w-11 h-6 bg-slate-700 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-slate-200 after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500 disabled:opacity-50"></div>
+                    </label>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-1.5">Name</label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleFormChange}
+                        required
+                        disabled={formStatus === 'submitting'}
+                        className="w-full bg-slate-900/50 border border-slate-700 rounded-sm px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors disabled:opacity-50"
+                        placeholder="Ihr Name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-1.5">E-Mail</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleFormChange}
+                        required
+                        disabled={formStatus === 'submitting'}
+                        className="w-full bg-slate-900/50 border border-slate-700 rounded-sm px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors disabled:opacity-50"
+                        placeholder="ihre@email.de"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="telefon" className="block text-sm font-medium text-slate-300 mb-1.5">Telefon <span className="text-slate-500 font-normal">(optional)</span></label>
+                      <input
+                        type="tel"
+                        id="telefon"
+                        name="telefon"
+                        value={formData.telefon}
+                        onChange={handleFormChange}
+                        disabled={formStatus === 'submitting'}
+                        className="w-full bg-slate-900/50 border border-slate-700 rounded-sm px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors disabled:opacity-50"
+                        placeholder="Ihre Telefonnummer"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="rueckrufzeit" className="block text-sm font-medium text-slate-300 mb-1.5">Beste Rückrufzeit <span className="text-slate-500 font-normal">(optional)</span></label>
+                      <input
+                        type="text"
+                        id="rueckrufzeit"
+                        name="rueckrufzeit"
+                        value={formData.rueckrufzeit}
+                        onChange={handleFormChange}
+                        disabled={formStatus === 'submitting'}
+                        className="w-full bg-slate-900/50 border border-slate-700 rounded-sm px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors disabled:opacity-50"
+                        placeholder="z.B. Vormittags, ab 17 Uhr..."
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="website" className="block text-sm font-medium text-slate-300 mb-1.5">Bestehende Website / Domain <span className="text-slate-500 font-normal">(optional)</span></label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      value={formData.website}
+                      onChange={handleFormChange}
+                      disabled={formStatus === 'submitting'}
+                      className="w-full bg-slate-900/50 border border-slate-700 rounded-sm px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors disabled:opacity-50"
+                      placeholder="z.B. www.meine-praxis.de"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="interessiert_an" className="block text-sm font-medium text-slate-300 mb-1.5">Interessiert an</label>
+                      <CustomSelect
+                        id="interessiert_an"
+                        name="interessiert_an"
+                        value={formData.interessiert_an}
+                        onChange={handleFormChange}
+                        required
+                        disabled={formStatus === 'submitting'}
+                        placeholder="Bitte auswählen..."
+                        options={[
+                          { value: 'Digitale Visitenkarte (One-Pager)', label: 'Digitale Visitenkarte (One-Pager)' },
+                          { value: 'Umfassende Praxis-Website (Multi-Pager)', label: 'Umfassende Praxis-Website (Multi-Pager)' },
+                          { value: 'Wartung & Support', label: 'Wartung / Rundum-Sorglos-Paket' },
+                          { value: 'Anderes Anliegen', label: 'Anderes Anliegen' }
+                        ]}
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="tools" className="block text-sm font-medium text-slate-300 mb-1.5">Gewünschte Tool-Integrationen <span className="text-slate-500 font-normal">(optional)</span></label>
+                      <input
+                        type="text"
+                        id="tools"
+                        name="tools"
+                        value={formData.tools}
+                        onChange={handleFormChange}
+                        disabled={formStatus === 'submitting'}
+                        className="w-full bg-slate-900/50 border border-slate-700 rounded-sm px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors disabled:opacity-50"
+                        placeholder="z.B. Doctolib, Jameda, Treatwell..."
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="anliegen" className="block text-sm font-medium text-slate-300 mb-1.5">Projekt / Anliegen</label>
+                    <textarea
+                      id="anliegen"
+                      name="anliegen"
+                      rows="4"
+                      value={formData.anliegen}
+                      onChange={handleFormChange}
+                      required
+                      disabled={formStatus === 'submitting'}
+                      className="w-full bg-slate-900/50 border border-slate-700 rounded-sm px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none disabled:opacity-50"
+                      placeholder="Beschreiben Sie kurz Ihr Vorhaben oder lassen Sie eine Nachricht da..."
+                    ></textarea>
+                  </div>
+
+                  {formStatus === 'error' && (
+                    <div className="bg-red-500/10 border border-red-500/30 rounded-sm p-3 text-red-400 text-sm">
+                      {formError}
+                    </div>
+                  )}
+
+                  <div className="bg-blue-900/20 border border-blue-900/30 rounded-sm p-3 text-slate-300 text-xs flex items-start gap-2.5">
+                    <ShieldCheck className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                    <p>Bitte geben Sie in diesem Formular <strong>keine sensiblen Gesundheitsdaten</strong> (wie Diagnosen oder Behandlungsdetails)&nbsp;an.</p>
+                  </div>
+
+                  <label className="flex items-start gap-3 cursor-pointer group pb-2">
+                    <input
+                      type="checkbox"
+                      name="datenschutzAkzeptiert"
+                      required
+                      disabled={formStatus === 'submitting'}
+                      className="mt-0.5 w-4 h-4 rounded-sm border-slate-600 bg-slate-900/50 text-blue-600 focus:ring-blue-500 focus:ring-offset-slate-900 disabled:opacity-50 cursor-pointer shrink-0"
+                    />
+                    <span className="text-slate-400 text-xs leading-relaxed">
+                      Ich habe die <a href="/datenschutz" className="text-blue-400 hover:text-blue-300 underline transition-colors" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> zur Kenntnis genommen und stimme der Verarbeitung meiner Daten zur Kontaktaufnahme zu.
+                    </span>
+                  </label>
+
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      disabled={formStatus === 'submitting'}
+                      className="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium py-3.5 px-8 rounded-sm transition-all shadow-md shadow-blue-900/20 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {formStatus === 'submitting' ? (
+                        <>
+                          <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                          </svg>
+                          Wird gesendet...
+                        </>
+                      ) : (
+                        <>
+                          Kostenloses Erstgespräch anfragen <ArrowRight size={18} />
+                        </>
+                      )}
+                    </button>
+                  </div>
+
+                  <div className="text-center mt-4">
+                    <p className="text-slate-400 text-xs flex items-center justify-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                      Antwort innerhalb von 24h werktags
+                    </p>
+                  </div>
+                </form>
+              )}
+
+              <div className="text-center border-t border-slate-700/50 pt-6">
+                <p className="text-slate-400 text-sm">
+                  Oder per E-Mail: <a href="mailto:kontakt@gilbert-webdesign.de" className="text-blue-400 hover:text-blue-300 transition-colors">kontakt@gilbert-webdesign.de</a>
                 </p>
               </div>
             </div>
@@ -719,6 +1025,66 @@ function AccordionItem({ question, answer, delay }) {
         </div>
       </div>
     </Reveal>
+  );
+}
+
+function CustomSelect({ options, value, onChange, placeholder, disabled, id, required }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const selectRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (selectRef.current && !selectRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const selectedOption = options.find(opt => opt.value === value);
+
+  return (
+    <div className="relative" ref={selectRef}>
+      {/* Hidden native select for form validation/submission via web3forms */}
+      <select id={id} name={id} required={required} value={value} onChange={() => {}} className="hidden" aria-hidden="true">
+        <option value="" disabled hidden>{placeholder}</option>
+        {options.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
+      </select>
+      
+      <button
+        type="button"
+        disabled={disabled}
+        onClick={() => setIsOpen(!isOpen)}
+        className={`w-full bg-slate-900/50 border ${isOpen ? 'border-blue-500 ring-1 ring-blue-500' : 'border-slate-700'} rounded-sm px-4 py-2.5 text-left text-white focus:outline-none transition-colors disabled:opacity-50 flex items-center justify-between group`}
+      >
+        <span className={value ? 'text-white' : 'text-slate-400'}>
+          {selectedOption ? selectedOption.label : placeholder}
+        </span>
+        <ChevronDown size={18} className={`text-slate-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-blue-400' : 'group-hover:text-slate-300'}`} />
+      </button>
+
+      <div className={`absolute z-50 w-full mt-1 bg-slate-800 border border-slate-700 rounded-sm shadow-xl overflow-hidden transition-all duration-200 origin-top ${isOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0 pointer-events-none'}`}>
+        <div className="max-h-60 overflow-y-auto no-scrollbar py-1">
+          {options.map((option) => (
+            <button
+              type="button"
+              key={option.value}
+              onClick={() => {
+                onChange({ target: { name: id, value: option.value } });
+                setIsOpen(false);
+              }}
+              className={`w-full text-left px-4 py-2.5 text-sm transition-colors flex items-center gap-2.5 ${value === option.value ? 'bg-blue-600/20 text-blue-400' : 'text-slate-300 hover:bg-slate-700 hover:text-white'}`}
+            >
+              <div className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 transition-colors ${value === option.value ? 'border-blue-400 bg-blue-400/10' : 'border-slate-600'}`}>
+                 {value === option.value && <div className="w-2 h-2 rounded-full bg-blue-400"></div>}
+              </div>
+              <span className={value === option.value ? 'font-medium' : ''}>{option.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
