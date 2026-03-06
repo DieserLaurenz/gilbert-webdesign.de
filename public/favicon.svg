@@ -2,12 +2,12 @@
   <rect width="64" height="64" rx="12" fill="#0f172a" />
   <text
     x="32"
-    y="46"
+    y="40"
     text-anchor="middle"
     fill="#ffffff"
     font-family="Playfair Display, Georgia, serif"
-    font-size="42"
+    font-size="15"
     font-weight="500"
-    letter-spacing="-1"
-  >G</text>
+    letter-spacing="0.5"
+  >Gilbert</text>
 </svg>
