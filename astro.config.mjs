@@ -6,7 +6,6 @@ import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
   site: "https://gilbert-webdesign.de",
-  output: "hybrid",
   adapter: cloudflare(),
   integrations: [react(), tailwind(), sitemap()],
 });
