@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Info } from 'lucide-react';
 
 export default function HeroSection() {
   return (
@@ -22,6 +22,11 @@ export default function HeroSection() {
           <a href="#leistungen" className="w-full sm:w-auto px-8 py-4 bg-white text-slate-900 font-medium border border-slate-200 rounded-sm hover:border-slate-300 hover:bg-slate-50 transition-all">
             Meine Leistungen
           </a>
+        </div>
+
+        <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-800 px-4 py-2.5 rounded-sm mt-10 text-sm md:text-base border border-blue-100 shadow-sm text-left">
+          <Info size={20} className="text-blue-600 shrink-0" />
+          <span><strong>Hinweis:</strong> Ich bin vom 16.03. bis 30.03. im Urlaub und in dieser Zeit nicht erreichbar.</span>
         </div>
       </div>
     </section>

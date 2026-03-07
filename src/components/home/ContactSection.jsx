@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CheckCircle, ShieldCheck, ArrowRight, Mail, Code2, ChevronDown } from 'lucide-react';
+import { CheckCircle, ShieldCheck, ArrowRight, Mail, Code2, ChevronDown, Info } from 'lucide-react';
 
 const FORM_STORAGE_KEY = 'gilbertContactForm';
 const FORM_STORAGE_OPT_IN_KEY = 'gilbertContactFormAutosaveOptIn';
@@ -135,6 +135,10 @@ export default function ContactSection() {
             <p className="text-slate-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
               Lassen Sie uns unverbindlich besprechen, wie wir Ihre digitale Sichtbarkeit und Ihre Anfragen verbessern können.
             </p>
+            <div className="mt-6 bg-blue-900/30 border border-blue-800 text-blue-200 px-4 py-3 rounded-sm max-w-xl mx-auto text-sm flex items-start gap-3 text-left">
+              <Info className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+              <p><strong>Hinweis:</strong> Ich bin vom 16.03. bis 30.03. im Urlaub und in dieser Zeit nicht erreichbar. Ihre Anfragen werden im Anschluss schnellstmöglich bearbeitet.</p>
+            </div>
           </div>
 
           {formStatus === 'success' ? (
