@@ -11,6 +11,16 @@
     "binding": "ASSETS",
     "directory": "./dist"
   },
+  "routes": [
+    {
+      "pattern": "gilbert-webdesign.de",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.gilbert-webdesign.de",
+      "custom_domain": true
+    }
+  ],
   "observability": {
     "enabled": true
   }
