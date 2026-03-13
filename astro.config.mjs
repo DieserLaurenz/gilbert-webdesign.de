@@ -9,10 +9,6 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: "compile",
   }),
-  build: {
-    client: "./",
-    server: "./_worker.js",
-  },
   integrations: [react(), sitemap()],
   vite: {
     plugins: [tailwindcss()],

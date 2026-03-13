@@ -1,4 +1,4 @@
-name: Build and Deploy to Cloudflare Pages
+name: Build and Deploy to Cloudflare Workers
 
 on:
   push:
@@ -49,11 +49,11 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
-      - name: Deploy to Cloudflare Pages
+      - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           wranglerVersion: 4.73.0
-          command: pages deploy dist --project-name=gilbert-webdesign --branch=main
+          command: deploy --config dist/server/wrangler.json
