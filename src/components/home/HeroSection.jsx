@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Info } from 'lucide-react';
+import { holidayNotice } from '../../data/siteFlags.js';
 
 export default function HeroSection() {
   return (
@@ -24,10 +25,12 @@ export default function HeroSection() {
           </a>
         </div>
 
-        <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-800 px-4 py-2.5 rounded-sm mt-10 text-sm md:text-base border border-blue-100 shadow-sm text-left">
-          <Info size={20} className="text-blue-600 shrink-0" />
-          <span><strong>Hinweis:</strong> Ich bin vom 16.03. bis 30.03. im Urlaub und in dieser Zeit nicht erreichbar.</span>
-        </div>
+        {holidayNotice.enabled && (
+          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-800 px-4 py-2.5 rounded-sm mt-10 text-sm md:text-base border border-blue-100 shadow-sm text-left">
+            <Info size={20} className="text-blue-600 shrink-0" />
+            <span><strong>Hinweis:</strong> {holidayNotice.shortText}</span>
+          </div>
+        )}
       </div>
     </section>
   );
