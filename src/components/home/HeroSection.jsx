@@ -4,7 +4,7 @@ import { holidayNotice } from '../../data/siteFlags.js';
 
 export default function HeroSection() {
   return (
-    <section className="md:min-h-screen flex flex-col justify-start md:justify-center pt-28 md:pt-20 pb-12 px-6">
+    <section className="min-h-[90svh] md:min-h-screen flex flex-col justify-center pt-32 md:pt-20 pb-12 px-6">
       <div className="max-w-4xl mx-auto text-center w-full">
         <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium text-slate-900 leading-[1.1] mb-6 tracking-tight">
           Hochwertige Webseiten, <br className="hidden md:block" />
