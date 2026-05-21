@@ -118,7 +118,7 @@ export default function ContactSection() {
       }
     } catch (error) {
       setFormStatus('error');
-      setFormError('Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail.');
+      setFormError(error.message || 'Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail.');
     }
   };
 

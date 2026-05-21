@@ -13,6 +13,7 @@ This project deploys to Cloudflare as a Worker, not via the old Pages Functions 
 
 - `CLOUDFLARE_API_TOKEN`
 - `CLOUDFLARE_ACCOUNT_ID`
+- `RESEND_API_KEY`
 
 ## Required Cloudflare state
 
