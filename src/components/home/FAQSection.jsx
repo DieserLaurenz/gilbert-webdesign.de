@@ -32,7 +32,7 @@ function AccordionItem({ question, answer }) {
     <div className="border border-slate-200 rounded-sm bg-white overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none focus-visible:bg-slate-50"
+        className="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer focus:outline-none focus-visible:bg-slate-50"
         aria-expanded={isOpen}
       >
         <span className="font-serif text-lg text-slate-900 pr-8">{question}</span>
