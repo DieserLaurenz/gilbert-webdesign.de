@@ -68,7 +68,7 @@ export default function LegalPageShell({
               <X className="hidden w-6 h-6 group-open:block" aria-hidden="true" />
             </summary>
 
-            <div className="absolute left-0 right-0 top-20 bg-white border-b border-slate-200 overflow-hidden shadow-sm">
+            <div className="absolute left-0 right-0 top-20 bg-white border-b border-slate-200 overflow-hidden shadow-sm max-h-0 opacity-0 group-open:max-h-96 group-open:opacity-100 transition-all duration-300 ease-in-out">
               <div className="px-6 py-4 flex flex-col gap-4 text-center">
                 {homeLinks.map((link) => (
                   <a key={link.href} href={link.href} className="text-slate-600 py-2 hover:text-blue-900 transition-colors">
