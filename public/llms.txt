@@ -45,6 +45,7 @@ Gilbert Webdesign entwickelt handprogrammierte, schnelle B2B-Websites für Arztp
 
 ## Canonical pages
 - / : Homepage
+- /webdesign-berlin/ : Lokale Landingpage für Webdesign in Berlin
 - /impressum : Impressum
 - /datenschutz : Datenschutzerklärung
 - /agb : Allgemeine Geschäftsbedingungen

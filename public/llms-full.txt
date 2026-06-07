@@ -62,6 +62,7 @@ Gilbert Webdesign ist ein gewerbliches Einzelunternehmen von Laurenz Gilbert mit
 
 ## Routing overview
 - / : Homepage mit Leistungen, Preisen, Referenzprojekt und FAQ
+- /webdesign-berlin/ : Lokale Landingpage für Webdesign in Berlin, Praxen, Therapieangebote und Wellness-Studios
 - /impressum : Impressum
 - /datenschutz : Datenschutzerklärung
 - /agb : Allgemeine Geschäftsbedingungen
