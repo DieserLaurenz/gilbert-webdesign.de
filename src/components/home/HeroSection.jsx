@@ -7,8 +7,8 @@ export default function HeroSection() {
     <section className="min-h-[90svh] md:min-h-screen flex flex-col justify-center pt-32 md:pt-20 pb-12 px-6">
       <div className="max-w-4xl mx-auto text-center w-full">
         <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium text-slate-900 leading-[1.1] mb-6 tracking-tight">
-          Hochwertige Webseiten, <br className="hidden md:block" />
-          die Vertrauen schaffen.
+          Webdesign für Praxen, <br className="hidden md:block" />
+          Therapie & Wellness in Berlin.
         </h1>
 
         <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
@@ -24,6 +24,13 @@ export default function HeroSection() {
             Meine Leistungen
           </a>
         </div>
+
+        <p className="mt-5 text-sm text-slate-500">
+          Fokus auf lokale Sichtbarkeit?{" "}
+          <a href="/webdesign-berlin/" className="font-medium text-blue-900 underline underline-offset-4 hover:text-blue-700 transition-colors">
+            Mehr zu Webdesign in Berlin
+          </a>
+        </p>
 
         {holidayNotice.enabled && (
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-800 px-4 py-2.5 rounded-sm mt-10 text-sm md:text-base border border-blue-100 shadow-sm text-left">

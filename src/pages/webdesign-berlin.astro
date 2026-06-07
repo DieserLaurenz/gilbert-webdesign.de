@@ -3,8 +3,9 @@ import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HomeNavigation from "../components/home/HomeNavigation.jsx";
 import PricingSection from "../components/home/PricingSection.jsx";
+import FAQSection from "../components/home/FAQSection.jsx";
 import ContactSection from "../components/home/ContactSection.jsx";
-import { ArrowRight, CheckCircle2, ChevronDown, MapPin, Search, Smartphone, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, MapPin, Search, Smartphone, Zap } from "lucide-react";
 
 const pageTitle = "Webdesign für Praxen & Wellness in Berlin | Gilbert Webdesign";
 const pageDescription = "Professionelles, lokales Webdesign für Arztpraxen, Physiotherapie und Wellness-Studios in Berlin. Für einen seriösen Auftritt und ein starkes Fundament für lokale Sichtbarkeit.";
@@ -30,6 +31,11 @@ const berlinFaqs = [
     question: "Kann eine bestehende Website aus Berlin überarbeitet werden?",
     answer:
       "Ja. Vor einem Redesign prüfe ich Struktur, Inhalte, Ladezeiten und technische Grundlagen. Danach lässt sich entscheiden, ob gezielte Anpassungen ausreichen oder ein kompletter Neuaufbau wirtschaftlich sinnvoller ist.",
+  },
+  {
+    question: "Was kostet es, eine Website in Berlin erstellen zu lassen?",
+    answer:
+      "Eine kompakte, professionelle Website für gewerbliche Kunden (B2B) startet bei 1.290 EUR netto zzgl. gesetzlicher Umsatzsteuer. Eine umfangreichere Praxis-Website mit mehreren Unterseiten, tieferer On-Page-SEO-Struktur und erweiterten Inhalten startet bei 2.290 EUR netto zzgl. gesetzlicher Umsatzsteuer. Entscheidend sind Umfang, Inhalte, Integrationen und die Frage, wie stark die Website auf lokale Sichtbarkeit in Berlin ausgerichtet werden soll.",
   },
   {
     question: "Werden Doctolib, Jameda, Treatwell oder andere Tools eingebunden?",
@@ -197,7 +203,59 @@ const structuredData = {
         </div>
       </section>
 
-      {/* 3. Warum lokales SEO (Dark Blue) */}
+      {/* 3. Website erstellen lassen (Slate-50) */}
+      <section id="website-erstellen-lassen" class="py-20 md:py-28 px-6 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-14 items-start">
+            <div>
+              <span class="text-blue-900 font-semibold tracking-wider uppercase text-sm mb-3 block">Website erstellen lassen Berlin</span>
+              <h2 class="font-serif text-3xl md:text-4xl text-slate-900 mb-6">Eine Website, die nicht nur gut aussieht, sondern für Auffindbarkeit vorbereitet ist</h2>
+              <div class="space-y-5 text-lg text-slate-600 leading-relaxed">
+                <p>
+                  Wenn Sie eine Website in Berlin erstellen lassen, sollte sie mehr leisten als eine digitale Broschüre. Gerade Praxen, Therapieangebote und Studios brauchen einen Auftritt, der Vertrauen nachvollziehbar unterstützt, Leistungen klar erklärt und für relevante lokale Suchanfragen strukturiert ist.
+                </p>
+                <p>
+                  Deshalb verbinde ich Design, technische Entwicklung und On-Page-SEO von Anfang an. Struktur, Ladezeit, mobile Darstellung, Kontaktwege und regionale Signale werden gemeinsam geplant, statt nachträglich angehängt zu werden.
+                </p>
+              </div>
+              <a href="#leistungen" class="inline-flex items-center justify-center gap-2 mt-8 px-6 py-3 bg-blue-900 text-white font-medium rounded-sm hover:bg-blue-800 transition-colors">
+                Leistungspakete ansehen <ArrowRight size={18} />
+              </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                {
+                  title: 'Klare Positionierung',
+                  text: 'Ihre Leistungen, Zielgruppe und Standortvorteile werden so strukturiert, dass Besucher schnell verstehen, warum sie Kontakt aufnehmen sollten.',
+                },
+                {
+                  title: 'Lokale Suchintention',
+                  text: 'Inhalte und Seitenstruktur orientieren sich an realistischen Suchanfragen wie Website erstellen lassen Berlin oder Webdesign für Praxen in Berlin.',
+                },
+                {
+                  title: 'Technisches Fundament',
+                  text: 'Saubere Meta-Daten, strukturierte Inhalte, schnelle Ladezeiten und Mobile-First-Umsetzung schaffen eine belastbare SEO-Basis.',
+                },
+                {
+                  title: 'Vertrauenssignale',
+                  text: 'Referenzen, Kontaktwege, Preise und fachlicher Kontext werden sichtbar eingebunden, damit die Seite nicht anonym oder austauschbar wirkt.',
+                },
+              ].map((item) => (
+                <div class="bg-white border border-slate-200 rounded-sm p-6 shadow-sm">
+                  <div class="w-10 h-10 bg-blue-50 text-blue-900 rounded-sm flex items-center justify-center mb-5">
+                    <CheckCircle2 size={20} />
+                  </div>
+                  <h3 class="font-serif text-xl text-slate-900 mb-3">{item.title}</h3>
+                  <p class="text-sm text-slate-600 leading-relaxed">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Warum lokales SEO (Dark Blue) */}
       <section id="vorteile" class="py-20 md:py-28 px-6 bg-slate-900 text-slate-50 relative">
         <div class="max-w-7xl mx-auto">
           <div class="text-center max-w-3xl mx-auto mb-16">
@@ -280,32 +338,12 @@ const structuredData = {
     </main>
 
     {/* FAQ & Kontakt */}
-    <div id="faq" class="bg-white border-t border-slate-200">
-      <section class="py-24 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-3xl mx-auto px-6">
-          <div class="text-center mb-16">
-            <h2 class="font-serif text-3xl md:text-4xl text-slate-900 mb-4">Häufige Fragen zu Webdesign in Berlin</h2>
-            <p class="text-slate-600">
-              Antworten zu lokaler Sichtbarkeit, Ablauf, Tool-Anbindung und rechtlichen Grenzen der Leistung.
-            </p>
-          </div>
-
-          <div class="space-y-4">
-            {berlinFaqs.map((faq) => (
-              <details class="group border border-slate-200 rounded-sm bg-white overflow-hidden">
-                <summary class="px-6 py-5 flex items-center justify-between cursor-pointer list-none focus:outline-none focus-visible:bg-slate-50">
-                  <span class="font-serif text-lg text-slate-900 pr-8">{faq.question}</span>
-                  <ChevronDown size={20} className="text-slate-400 shrink-0 transition-transform duration-300 group-open:rotate-180" aria-hidden="true" />
-                </summary>
-                <div class="px-6 pb-5 pt-1 text-slate-600 leading-relaxed border-t border-slate-100">
-                  {faq.answer}
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
+    <FAQSection
+      client:visible
+      faqs={berlinFaqs}
+      title="Häufige Fragen zu Webdesign in Berlin"
+      description="Antworten zu lokaler Sichtbarkeit, Ablauf, Tool-Anbindung und rechtlichen Grenzen der Leistung."
+    />
     <div class="bg-slate-50 border-t border-slate-200">
       <ContactSection client:visible />
     </div>

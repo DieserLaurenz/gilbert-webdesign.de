@@ -2,17 +2,21 @@ import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { faqData } from '../../data/faqData.js';
 
-export default function FAQSection() {
+export default function FAQSection({
+  faqs = faqData,
+  title = "Häufig gestellte Fragen",
+  description = "Transparente Antworten zu Ablauf, Kosten und technischen Details Ihrer neuen Praxis-Website.",
+}) {
   return (
     <section id="faq" className="py-24 bg-slate-50 border-t border-slate-200">
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-3xl md:text-4xl text-slate-900 mb-4">Häufig gestellte Fragen</h2>
-          <p className="text-slate-600">Transparente Antworten zu Ablauf, Kosten und technischen Details Ihrer neuen Praxis-Website.</p>
+          <h2 className="font-serif text-3xl md:text-4xl text-slate-900 mb-4">{title}</h2>
+          <p className="text-slate-600">{description}</p>
         </div>
 
         <div className="space-y-4">
-          {faqData.map((faq) => (
+          {faqs.map((faq) => (
             <AccordionItem
               key={faq.question}
               question={faq.question}
